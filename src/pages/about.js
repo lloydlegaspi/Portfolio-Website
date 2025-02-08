@@ -37,9 +37,9 @@ const About = () => {
 
             {/* Left Section: About Me and Tools & Technologies */}
             <div className="flex-1 max-w-3xl w-full text-left">
-              <h3 className="mb-6 text-3xl lg:text-4xl font-bold ">
-              Hi! I'm John Lloyd Legaspi, just call me{" "}
-              <strong>Lloyd</strong>.
+              <h3 id="about-me" className="mb-6 text-3xl lg:text-4xl font-bold ">
+                Hi! I'm John Lloyd Legaspi, just call me{" "}
+                <strong>Lloyd</strong>.
               </h3>
               <p className="mb-4 text-sm md:text-base font-medium">
                 I’m a <strong>Computer Science student</strong> at the{" "}
@@ -63,9 +63,13 @@ const About = () => {
           </div>
 
           {/* Additional Sections */}
-          <Experience />
-          <Education />
+          <section id="experience">
+            <Experience />
+          </section>
 
+          <section id="education">
+            <Education />
+          </section>
         </Layout>
       </main>
     </>
@@ -73,4 +77,5 @@ const About = () => {
 };
 
 export default About;
+
 
