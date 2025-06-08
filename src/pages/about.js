@@ -38,22 +38,22 @@ const About = () => {
             {/* Left Section: About Me and Tools & Technologies */}
             <div className="flex-1 max-w-3xl w-full text-left">
               <h3 id="about-me" className="mb-6 text-3xl lg:text-4xl font-bold ">
-                Hi! I'm John Lloyd Legaspi, just call me{" "}
+                Hi! I&apos;m John Lloyd Legaspi, just call me{" "}
                 <strong>Lloyd</strong>.
               </h3>
               <p className="mb-4 text-sm md:text-base font-medium">
-                I’m a <strong>Computer Science student</strong> at the{" "}
+                I&apos;m a <strong>Computer Science student</strong> at the{" "}
                 <strong>Polytechnic University of the Philippines</strong> and a{" "}
                 <strong>DOST Scholar</strong>. I approach challenges with a{" "}
                 <strong>logical</strong> and <strong>strategic</strong>{" "}
                 mindset, always thinking several steps ahead. Planning early is
-                my thing — I can’t stand the pressure of last-minute cramming.
+                my thing — I can&apos;t stand the pressure of last-minute cramming.
               </p>
               <p className="text-sm md:text-base font-medium">
-                Although I’m naturally introverted, I often find myself in{" "}
+                Although I&apos;m naturally introverted, I often find myself in{" "}
                 <strong>leadership roles</strong>, whether in organizations or{" "}
-                group projects. When I'm not busy with studies or projects,
-                you’ll probably catch me walking peacefully around my
+                group projects. When I&apos;m not busy with studies or projects,
+                you&apos;ll probably catch me walking peacefully around my
                 neighborhood.
               </p>
 

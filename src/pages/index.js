@@ -33,7 +33,7 @@ export default function Home() {
                 Data Science | Machine Learning | Software Development
               </p>
               <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
-                Hey there! I'm Lloyd, a <strong>computer science student</strong> who loves learning and solving problems. I thrive as a <strong>quick learner</strong> and a <strong>team player</strong>, always eager to take on challenges that help me grow.
+                Hey there! I&apos;m Lloyd, a <strong>computer science student</strong> who loves learning and solving problems. I thrive as a <strong>quick learner</strong> and a <strong>team player</strong>, always eager to take on challenges that help me grow.
               </p>
               <div className="flex justify-center gap-6 mt-4 lg:mt-6">
                 <SocialIcons />
