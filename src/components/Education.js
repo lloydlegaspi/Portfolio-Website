@@ -68,7 +68,7 @@ const Details = ({ degree, school, schoolLink, time, address, highlights }) => {
                       rel="noopener noreferrer"
                       className="text-primaryDark font-semibold"
                     >
-                      {"PUP The Programmers' Guild"}
+                      PUP The Programmers&apos; Guild
                     </a>{" "}
                     (2023-Present)
                   </>
