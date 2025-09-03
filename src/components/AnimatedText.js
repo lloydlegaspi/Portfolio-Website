@@ -30,9 +30,10 @@ const singleWord = {
 
 const AnimatedText = ({ text, className = "" }) => {
   return (
-    <div className="w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden sm:py-0">
+    <div className="w-full mx-auto py-2 overflow-hidden sm:py-0">
       <motion.h1
-        className={`inline-block w-full text-dark dark:text-light font-bold capitalize text-8xl ${className}`}
+        className={`inline-block w-full text-dark dark:text-light font-bold capitalize break-words leading-tight ${className}`}
+        style={{ wordBreak: "break-word" }}
         variants={quote}
         initial="initial"
         animate="animate"

@@ -1,19 +1,15 @@
 import * as React from "react";
 
-export const GithubIcon = ({ className, ...rest }) => (
+export const GithubIcon = ({ className = '', ...rest }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    viewBox="0 0 512 512"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+    className={className}
     {...rest}
-    className={`w-full h-auto ${className}`}
   >
-    <path fill="none" d="M0 0h512v512H0z" />
-    <path
-      fill="currentColor"
-      d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 0 0 3.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 0 1-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0 0 25.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 0 1 5-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 0 1 112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 0 1 5 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 0 0 4-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32Z"
-    />
+    <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.38-3.88-1.38-.53-1.36-1.28-1.72-1.28-1.72-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.97.1-.76.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.03 11.03 0 0 1 5.79 0c2.2-1.5 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.71 5.41-5.29 5.69.42.36.79 1.08.79 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
   </svg>
 );
 
@@ -103,6 +99,21 @@ export const FacebookIcon = ({ className, ...rest }) => (
     />
   </svg>
 );
+
+// External link / View icon
+export const ExternalLinkIcon = ({ className = '', ...rest }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} {...rest} aria-hidden>
+    <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z" />
+    <path d="M5 5h5V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-5h-2v5H5V5z" />
+  </svg>
+);
+
+// Document / Docu icon
+export const DocumentIcon = ({ className = '', ...rest }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} {...rest} aria-hidden>
+    <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM13 3.5L18.5 9H13V3.5zM8 13h8v2H8v-2zm0-4h8v2H8V9z" />
+  </svg>
+);
   
 
 export const SunIcon = ({ className, ...rest }) => (
@@ -149,7 +160,7 @@ export const SunIcon = ({ className, ...rest }) => (
       </path>
     </g>
     <g fill="currentColor" fillOpacity="0">
-      <path d="m15.22 6.03l2.53-1.94L14.56 4L13.5 1l-1.06 3l-3.19.09l2.53 1.94l-.91 3.06l2.63-1.81l2.63 1.81z">
+      <path d="m15.22 6.03l2.53-1.94L14.56 4L13.5 1l-1.06 3m-3.19.09l2.53 1.94l-.91 3.06l2.63-1.81l2.63 1.81z">
         <animate
           id="lineMdSunnyFilledLoopToMoonFilledLoopTransition0"
           fill="freeze"
@@ -452,6 +463,31 @@ export const LinkArrow = ({ className, ...rest }) => (
       stroke="currentColor"
       d="M5.625 15a.75.75 0 0 0-1.5 0h1.5Zm-.75 1h-.75.75Zm14.4-1a.75.75 0 0 0-1.5 0h1.5Zm-8.166.539a.75.75 0 0 0 1.182.922l-1.182-.922Zm5.082-4.078a.75.75 0 0 0-1.182-.922l1.182.922Zm-5.082 5a.75.75 0 0 0 1.182-.922l-1.182.922ZM8.39 10.54a.75.75 0 0 0-1.182.922l1.182-.922ZM10.95 16a.75.75 0 0 0 1.5 0h-1.5Zm1.5-11a.75.75 0 0 0-1.5 0h1.5ZM4.125 15v1h1.5v-1h-1.5Zm0 1c0 2.053 1.628 3.75 3.675 3.75v-1.5c-1.183 0-2.175-.99-2.175-2.25h-1.5ZM7.8 19.75h7.8v-1.5H7.8v1.5Zm7.8 0c2.047 0 3.675-1.697 3.675-3.75h-1.5c0 1.26-.992 2.25-2.175 2.25v1.5ZM19.275 16v-1h-1.5v1h1.5Zm-6.984.461 3.9-5-1.182-.922-3.9 5 1.182.922Zm0-.922-3.9-5-1.182.922 3.9 5 1.182-.922Zm.159.461V5h-1.5v11h1.5Z"
     />
+  </svg>
+);
+
+// Tag icon for filters
+export const TagIcon = ({ className = '', ...rest }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} {...rest} aria-hidden>
+    <path d="M20.59 13.41L11 3 3 11l8.59 8.59L20.59 13.41zM7.5 10.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+  </svg>
+);
+
+// Tool / wrench icon for filters
+export const ToolIcon = ({ className = '', ...rest }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} {...rest} aria-hidden>
+    <path d="M22.7 19.3l-6.01-6.01a6.5 6.5 0 0 0-1.06-8.92 6.5 6.5 0 0 0-8.92 1.06L3 6.17 1.59 4.76 3 3.34l2.5 2.5A8.5 8.5 0 0 1 17.84 17.84l-2.5 2.5 1.41 1.41 1.41-1.41 3.54-3.54z" />
+  </svg>
+);
+
+// Sort icon (toggles between asc/desc visually by rotation)
+export const SortIcon = ({ className = '', direction = 'desc', ...rest }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} {...rest} aria-hidden>
+    {direction === 'asc' ? (
+      <path d="M7 14l5-5 5 5H7z" />
+    ) : (
+      <path d="M7 10l5 5 5-5H7z" />
+    )}
   </svg>
 );
 

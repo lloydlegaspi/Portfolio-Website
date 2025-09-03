@@ -109,30 +109,6 @@ const NavBar = () => {
       <div className="w-full flex justify-between items-center lg:hidden">
         <nav className="flex justify-center flex-grow gap-8">
           <CustomLink href="/" title="Home" />
-          <div
-            className="relative group"
-            onMouseEnter={handleHoverStart}
-            onMouseLeave={handleHoverEnd}
-          >
-            <CustomLink href="/about" title="About">
-              {/* Sub-navbar for About */}
-              <div
-                className={`absolute left-0 mt-2 bg-white dark:bg-gray-800 p-2 shadow-lg rounded-md ${isHovered ? "block" : "hidden"}`}
-                onMouseEnter={handleSubNavHover}
-                onMouseLeave={handleSubNavLeave}
-              >
-                <Link href="/about#about-me" className="block py-1 px-3 hover:bg-gray-100 dark:hover:bg-gray-700">
-                  About Me
-                </Link>
-                <Link href="/about#experience" className="block py-1 px-3 hover:bg-gray-100 dark:hover:bg-gray-700">
-                  Experience
-                </Link>
-                <Link href="/about#education" className="block py-1 px-3 hover:bg-gray-100 dark:hover:bg-gray-700">
-                  Education
-                </Link>
-              </div>
-            </CustomLink>
-          </div>
           <CustomLink href="/projects" title="Projects" />
         </nav>
 
@@ -156,9 +132,7 @@ const NavBar = () => {
         >
           <nav className="flex flex-col items-center gap-6">
             <CustomMobileLink href="/" title="Home" toggle={handleClick} />
-            <CustomMobileLink href="/about" title="About" toggle={handleClick} />
             <CustomMobileLink href="/projects" title="Projects" toggle={handleClick} />
-            <CustomMobileLink href="/articles" title="Articles" toggle={handleClick} />
           </nav>
 
           <nav className="flex items-center justify-center flex-wrap gap-4 mt-6">

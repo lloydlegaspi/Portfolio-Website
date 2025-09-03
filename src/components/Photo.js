@@ -6,12 +6,12 @@ import profilePic from "../../public/images/profile/prof-pic-1.png";
 
 const Photo = () => {
   return (
-    <div className="flex justify-center items-center w-full h-full relative">
+  <div className="flex justify-center items-center w-full h-full relative">
       {/* Animated Image Container */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="relative max-w-[500px] md:max-w-[600px] lg:max-w-[700px] aspect-square rounded-full overflow-hidden"
+  className="w-96 lg:w-80 md:w-64 sm:w-48 xs:w-40 aspect-square rounded-full overflow-hidden relative"
       >
         <Image
           src={profilePic}
@@ -26,15 +26,17 @@ const Photo = () => {
 
       {/* Animated SVG Circle */}
       <motion.svg
-        className="absolute top-0 left-0 w-full h-full"
+        className="absolute top-0 left-0 w-full h-full pointer-events-none"
         fill="transparent"
-        viewBox="0 0 600 600" // Match the image dimensions
+        viewBox="0 0 600 600"
         xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ maxWidth: '100%', maxHeight: '100%' }}
       >
         <motion.circle
-          cx="295" // Center of the circle
-          cy="305" // Center of the circle
-          r="295"  // Radius should fit the image
+          cx="295"
+          cy="305"
+          r="270"
           className="stroke-black dark:stroke-white"
           strokeWidth="4"
           strokeLinecap="round"

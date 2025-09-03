@@ -1,9 +1,80 @@
 import Head from "next/head";
-import Photo from "../components/Photo";
-import AnimatedText from "../components/AnimatedText.js";
 import TransitionEffect from "@/components/TransitionEffect";
-import SocialIcons from "@/components/SocialIcons";
-import ParticlesContainer from "../components/ParticlesContainer";
+import HeroSection from "@/components/HeroSection";
+import AboutCarousel from "@/components/AboutCarousel";
+import Experience from "@/components/Experience";
+import Education from "@/components/Education";
+import Technologies from "@/components/Technologies";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
+import SideNav from "@/components/SideNav";
+
+const ABOUT_IMAGES = [
+  "/images/aboutme/about-pic-1.png",
+  "/images/aboutme/about-pic-2.jpg",
+  "/images/aboutme/about-pic-3.jpg",
+  "/images/aboutme/about-pic-4.jpg",
+];
+
+function AboutSection() {
+  return (
+    <section id="about" className="w-full bg-light dark:bg-dark pt-6 pb-2 md:pt-8 md:pb-3">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="flex flex-row xl:flex-row w-full gap-12 xl:gap-16 items-center">
+          <div className="relative w-full xl:w-[40%] max-w-[400px] xl:max-w-none rounded-2xl border-2 border-solid border-dark bg-light dark:bg-dark dark:border-light order-last lg:order-first md:hidden sm:hidden lg:hidden">
+            <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light overflow-hidden" />
+            <AboutCarousel images={ABOUT_IMAGES} />
+          </div>
+
+          <div className="flex-1 max-w-3xl w-full text-left">
+            <h3 id="about-me" className="mb-6 text-3xl lg:text-4xl font-bold">
+              Building Foundations, Shaping Skills.
+            </h3>
+
+            <p className="mb-4 text-sm md:text-base font-medium">
+              I&apos;m a <strong>Computer Science student</strong> at the <strong>Polytechnic
+              University of the Philippines</strong> and a <strong>DOST Scholar</strong>. I enjoy
+              solving problems with a <strong>logical</strong> and <strong>strategic</strong>
+              mindset, always thinking several steps ahead. Planning early is my thing as I
+              can&apos;t stand the pressure of last-minute cramming.
+            </p>
+
+            <p className="text-sm md:text-base font-medium">
+              Though I&apos;m naturally introverted, I continually strive to become the
+              <strong> best leader</strong> I can be, learning from every project and
+              collaboration. Beyond academics and coding, I value simple moments of peace like
+              walking and running to reset and recharge.
+            </p>
+
+            <Technologies />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ExperienceEducationSection() {
+  return (
+    <>
+      <section id="education" className="w-full bg-light dark:bg-dark pt-6 pb-2 md:pt-8 md:pb-3">
+        <div className="max-w-6xl mx-auto px-4 py-8">
+          <Education />
+        </div>
+      </section>
+
+      <section id="experience" className="w-full bg-light dark:bg-dark pt-6 pb-2 md:pt-8 md:pb-3">
+        <div className="max-w-6xl mx-auto px-4 py-8">
+          <Experience />
+        </div>
+      </section>
+      <section id="projects" className="w-full bg-light dark:bg-dark pt-6 pb-8 md:pt-8 md:pb-12">
+        <div className="max-w-6xl mx-auto px-4 py-8">
+          <ProjectsCarousel />
+        </div>
+      </section>
+    </>
+  );
+}
 
 export default function Home() {
   return (
@@ -12,35 +83,14 @@ export default function Home() {
         <title>Lloyd Legaspi</title>
         <meta name="description" content="Lloyd Legaspi - Portfolio" />
       </Head>
+
       <TransitionEffect />
-      <main className="relative flex items-center text-dark w-full dark:text-light py-24">
-        <ParticlesContainer />
-          <div className="relative z-10 p-4 mx-14 md:mx-14 lg:mx-26 flex-grow">
-          <div className="flex items-center justify-center w-full lg:flex-col">
-            {/* Profile Image */}
-            <div className="w-1/2 md:w-full flex justify-center lg:mb-4 sm:w-1/2">
-              <Photo />
-            </div>
 
-            {/* Text Section */}
-            <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center">
-              <AnimatedText
-                text="John Lloyd Legaspi"
-                className="!text-6xl !text-center xl:!text-5xl lg:!text-6xl md:!text-5xl sm:!text-3xl sm:pt-2"
-              />
-
-              <p className="text-lg font-medium text-gray-600 dark:text-gray-400 md:text-base sm:text-sm">
-                Data Science | Machine Learning | Software Development
-              </p>
-              <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
-                Hey there! I&apos;m Lloyd, a <strong>computer science student</strong> who loves learning and solving problems. I thrive as a <strong>quick learner</strong> and a <strong>team player</strong>, always eager to take on challenges that help me grow.
-              </p>
-              <div className="flex justify-center gap-6 mt-4 lg:mt-6">
-                <SocialIcons />
-              </div>
-            </div>
-          </div>
-        </div>
+      <main className="relative flex flex-col items-center text-dark w-full dark:text-light">
+        <SideNav />
+        <HeroSection />
+        <AboutSection />
+        <ExperienceEducationSection />
       </main>
     </>
   );
