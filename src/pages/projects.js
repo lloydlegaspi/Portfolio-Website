@@ -106,7 +106,7 @@ const Project = ({ title, img, link, github, view, docu, description, date, hide
   );
 };
 
-const projects = () => {
+const Projects = () => {
   const [selectedTags, setSelectedTags] = React.useState([]);
   const [selectedYear, setSelectedYear] = React.useState("");
   const [sortDirection, setSortDirection] = React.useState("desc"); // desc by default
@@ -263,7 +263,7 @@ const projects = () => {
   );
 };
 
-export default projects;
+export default Projects;
 
 
 

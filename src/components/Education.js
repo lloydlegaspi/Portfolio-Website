@@ -1,11 +1,12 @@
 import React from "react";
+import Image from "next/image";
 
 const EduCard = ({ logo, degree, school, time, location, bullets }) => (
   <article className="p-5 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900 transition-transform transform hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-primaryDark/20">
     <div className="flex items-start gap-4">
       {logo ? (
         <div className="flex-shrink-0 w-14 h-14 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-          <img src={logo} alt={`${school} logo`} className="w-10 h-10 object-contain" />
+          <Image src={logo} alt={`${school} logo`} width={40} height={40} className="object-contain" />
         </div>
       ) : (
         <div className="flex-shrink-0 w-14 h-14 rounded-full bg-gray-100 dark:bg-gray-800" />

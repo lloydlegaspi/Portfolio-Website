@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { GithubIcon, ExternalLinkIcon, DocumentIcon } from "@/components/Icons";
 import PROJECTS from "@/data/projects";
@@ -65,11 +66,14 @@ export default function ProjectsCarousel() {
               >
                 <span className="text-sm text-gray-500 dark:text-gray-400">{proj.date}</span>
 
-                <div className="mt-2 overflow-hidden rounded-lg">
-                  <img
+                <div className="mt-2 overflow-hidden rounded-lg relative w-full" style={{height: isCenter ? 224 : 176}}>
+                  <Image
                     src={proj.image}
                     alt={proj.title}
-                    className={`${isCenter ? "h-56" : "h-44"} w-full object-cover rounded-lg transition-all duration-700 ease-in-out`}
+                    fill
+                    sizes={isCenter ? '420px' : '300px'}
+                    className={`object-cover rounded-lg transition-all duration-700 ease-in-out`}
+                    priority={isCenter}
                   />
                 </div>
 

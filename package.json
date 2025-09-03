@@ -16,6 +16,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-tsparticles": "^2.12.2",
+    "sharp": "^0.34.3",
     "tsparticles": "^3.8.1",
     "tsparticles-engine": "^2.12.0"
   },
