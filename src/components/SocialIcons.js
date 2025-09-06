@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { GithubIcon, LinkedInIcon, InstagramIcon, FacebookIcon, ExternalLinkIcon, DocumentIcon } from "./Icons";
 import Tooltip from "./Tooltip";
 
@@ -19,14 +20,14 @@ const SocialIcons = ({ mode }) => {
           <span className="leading-none">Download CV</span>
         </a>
 
-        <a
+        <Link
           href="/projects"
           className="flex items-center justify-center gap-2 h-9 px-4 min-w-[140px] text-sm rounded-md bg-white dark:bg-dark text-dark dark:text-white font-semibold border border-transparent transition-shadow hover:shadow-sm"
           aria-label="View Projects"
         >
           <ExternalLinkIcon className="w-4 ml-1" />
           <span className="leading-none">View Projects</span>
-        </a>
+        </Link>
       </div>
 
   {/* Social Icons Below Resume and Contact Buttons */}
