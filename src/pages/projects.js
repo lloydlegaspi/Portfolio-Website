@@ -3,10 +3,9 @@ import Head from "next/head";
 import Layout from "@/components/layout";
 import Link from "next/link";
 import Image from "next/image";
-import { GithubIcon, ExternalLinkIcon, DocumentIcon, TagIcon, SortIcon } from "@/components/Icons";
+import { GithubIcon, ExternalLinkIcon, DocumentIcon, TagIcon, SortIcon, BackIcon } from "@/components/Icons";
 import PROJECTS from "@/data/projects";
 import { motion } from "framer-motion";
-import TransitionEffect from "@/components/TransitionEffect";
 
 const FramerImage = motion(Image);
 
@@ -207,9 +206,17 @@ const Projects = () => {
         <title>Lloyd Legaspi | Projects Page</title>
         <meta name="description" content="Portfolio projects by Lloyd Legaspi" />
       </Head>
-      <TransitionEffect />
       <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
+          {/* Back button shown when NavBar is hidden on this route */}
+          <div className="w-full mb-6">
+            <Link href="/" className="inline-flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:underline" aria-label="Back to home">
+              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
+                <BackIcon className="w-4 h-4" />
+              </span>
+              <span className="text-sm">Back</span>
+            </Link>
+          </div>
           {/* Minimalist filter: small toggle button that opens a compact panel */}
           <div className="w-full mb-6 flex justify-end items-center gap-4">
             <div className="flex items-center gap-2">

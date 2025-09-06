@@ -78,11 +78,11 @@ const Experience = () => {
 
   return (
     <section>
-      <div className="flex items-center justify-between mb-3">
-        <h3 className="mb-6 text-3xl lg:text-4xl font-bold">Experience shapes skills.</h3>
+      <div className="flex items-center justify-center mb-3">
+        <h3 className="mb-6 text-3xl lg:text-4xl font-bold text-center w-full mx-auto">Experience shapes skills.</h3>
       </div>
 
-  <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
         {experiences.map((exp, i) => (
           <ExperienceCard key={i} {...exp} />
         ))}

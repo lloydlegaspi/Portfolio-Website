@@ -1,12 +1,11 @@
 import Head from "next/head";
-import TransitionEffect from "@/components/TransitionEffect";
 import HeroSection from "@/components/HeroSection";
 import AboutCarousel from "@/components/AboutCarousel";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
+import ExperienceEducationTabs from "@/components/ExperienceEducationTabs";
 import Technologies from "@/components/Technologies";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
-import SideNav from "@/components/SideNav";
 
 const ABOUT_IMAGES = [
   "/images/aboutme/about-pic-1.png",
@@ -56,17 +55,16 @@ function AboutSection() {
 function ExperienceEducationSection() {
   return (
     <>
-      <section id="education" className="w-full bg-light dark:bg-dark pt-6 pb-2 md:pt-8 md:pb-3">
-        <div className="max-w-6xl mx-auto px-4 py-8">
-          <Education />
-        </div>
-      </section>
-
       <section id="experience" className="w-full bg-light dark:bg-dark pt-6 pb-2 md:pt-8 md:pb-3">
         <div className="max-w-6xl mx-auto px-4 py-8">
           <Experience />
         </div>
       </section>
+
+      <section id="education-certificates" className="w-full bg-light dark:bg-dark pt-6 pb-2 md:pt-8 md:pb-3">
+        <ExperienceEducationTabs />
+      </section>
+
       <section id="projects" className="w-full bg-light dark:bg-dark pt-6 pb-8 md:pt-8 md:pb-12">
         <div className="max-w-6xl mx-auto px-4 py-8">
           <ProjectsCarousel />
@@ -80,14 +78,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Lloyd Legaspi</title>
-        <meta name="description" content="Lloyd Legaspi - Portfolio" />
+        <title>John Lloyd Legaspi</title>
+        <meta name="description" content="John Lloyd Legaspi - Portfolio" />
       </Head>
 
-      <TransitionEffect />
-
-      <main className="relative flex flex-col items-center text-dark w-full dark:text-light">
-        <SideNav />
+  <main className="relative flex flex-col items-center text-dark w-full dark:text-light pt-24">
         <HeroSection />
         <AboutSection />
         <ExperienceEducationSection />

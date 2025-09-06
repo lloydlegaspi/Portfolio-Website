@@ -66,9 +66,6 @@ const Education = () => {
 
   return (
     <section>
-      <div className="flex items-center justify-between mb-3">
-        <h3 className="mb-6 text-3xl lg:text-4xl font-bold">Education builds foundations.</h3>
-      </div>
 
   <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
         {schools.map((s, i) => (

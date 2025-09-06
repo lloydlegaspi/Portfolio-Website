@@ -13,16 +13,19 @@ const montserrat = Montserrat({
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  // routes where the global NavBar should be hidden
+  const hideNavRoutes = ["/projects"];
+  const showNav = !hideNavRoutes.includes(router.pathname);
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo/logo-tab.png" />
       </Head>
       <main
         className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}
       >
-        <NavBar />
+  {showNav && <NavBar />}
         <AnimatePresence mode="wait">
         <Component key={router.asPath} {...pageProps} />
         </AnimatePresence>
