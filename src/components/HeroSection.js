@@ -6,9 +6,9 @@ import SocialIcons from "@/components/SocialIcons";
 
 const HeroSection = () => {
   return (
-  <section id="home" className="w-full bg-light dark:bg-dark  flex items-center relative py-20">
+  <section id="home" className="w-full bg-light dark:bg-dark flex items-center relative py-20">
       <ParticlesContainer />
-      <div className="max-w-6xl mx-auto px-4 py-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 py-10 relative z-10">
   <div className="flex flex-row w-full items-center sm:flex-col sm:gap-10 md:gap-6 md:flex-col lg:gap-10 lg:flex-col">
 
           {/* Profile Image */}
@@ -28,8 +28,7 @@ const HeroSection = () => {
             </p>
 
             <p className="my-4 text-sm font-medium md:text-base lg:text-base">
-              Hey there! I&apos;m Lloyd, a <strong>computer science student</strong> who loves
-              learning and solving problems.
+              Hey there! I&apos;m Lloyd, always eager to learn, build, and improve with data, code, and creativity.
             </p>
 
             <div className="flex gap-4 mt-4 items-center sm:justify-center md:justify-center lg:justify-center">

@@ -16,7 +16,7 @@ const AboutCarousel = ({ images = [], interval = 4000 }) => {
   const next = () => setCurrent((s) => (s + 1) % images.length);
 
   return (
-    <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl">
+    <div className="relative w-full aspect-[3.8/4] overflow-hidden rounded-2xl">
       {images.map((src, i) => (
         <div
           key={i}

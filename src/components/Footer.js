@@ -35,7 +35,7 @@ const Footer = () => {
             aria-label="Email"
             className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center"
           >
-            <img src="/images/icons/email-black.png" alt="Email" className="w-4 h-4 filter dark:invert" />
+            <img src="/images/icons/email-white.png" alt="Email" className="w-4 h-4 filter dark:invert" />
           </a>
         </div>
       </div>

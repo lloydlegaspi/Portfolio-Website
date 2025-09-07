@@ -37,11 +37,16 @@ export default function ProjectsCarousel() {
   const visible = [PROJECTS[leftIndex], PROJECTS[index], PROJECTS[rightIndex]];
 
   return (
-    <section id="projects" className="w-full">
+    <div className="w-full">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-3xl font-bold">Projects rise from foundations and skills.</h3>
-        <Link href="/projects" className="inline-flex items-center gap-2 px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-500 transition">
-          See all projects
+        <Link
+          href="/projects"
+          className="flex items-center justify-center gap-2 h-9 px-4 min-w-[140px] text-sm rounded-md bg-white text-black dark:bg-white dark:text-black font-semibold border border-transparent transition-shadow hover:shadow-sm"
+          aria-label="View Projects"
+        >
+          <ExternalLinkIcon className="w-4 mr-2" />
+          <span className="leading-none">View All</span>
         </Link>
       </div>
 
@@ -58,32 +63,43 @@ export default function ProjectsCarousel() {
                 key={proj.id}
                 onClick={() => (pos === 0 ? prev() : pos === 2 ? next() : null)}
                 style={{ willChange: "transform, opacity, filter" }}
-                className={`cursor-pointer select-none transition-all duration-700 ease-in-out transform rounded-2xl border border-solid p-4 bg-white dark:bg-gray-900 dark:border-gray-700 flex-shrink-0 ${
+                className={`cursor-pointer select-none transition-all duration-700 ease-in-out transform rounded-xl border border-solid p-3 bg-white dark:bg-gray-900 dark:border-gray-700 flex-shrink-0 ${
                   isCenter
-                    ? "w-[420px] scale-105 z-30 shadow-xl filter-none"
-                    : "w-[300px] scale-95 opacity-70 z-10 filter blur-sm"
+                    ? "w-[360px] scale-100 z-30 shadow-md filter-none"
+                    : "w-[260px] scale-95 opacity-75 z-10 filter blur-sm"
                 }`}
               >
-                <span className="text-sm text-gray-500 dark:text-gray-400">{proj.date}</span>
+                <span className="text-xs sm:text-xs md:text-sm text-gray-500 dark:text-gray-400">{proj.date}</span>
 
-                <div className="mt-2 overflow-hidden rounded-lg relative w-full" style={{height: isCenter ? 224 : 176}}>
+        <div className="mt-2 overflow-hidden rounded-md relative w-full" style={{height: isCenter ? 176 : 144}}>
                   <Image
                     src={proj.image}
                     alt={proj.title}
                     fill
-                    sizes={isCenter ? '420px' : '300px'}
+          sizes={isCenter ? '360px' : '260px'}
                     className={`object-cover rounded-lg transition-all duration-700 ease-in-out`}
                     priority={isCenter}
                   />
                 </div>
 
-                <h4 className={`${isCenter ? "text-2xl mt-3 font-bold" : "text-lg mt-3 font-bold"}`}>{proj.title}</h4>
-                <p className="mt-2 text-sm text-gray-700 dark:text-gray-300 line-clamp-3">{proj.description}</p>
+        <h4 className={`font-semibold text-base sm:text-base md:text-lg lg:text-lg mt-3 leading-tight text-gray-900 dark:text-white`}>{proj.title}</h4>
+
+                {proj.tags && proj.tags.length > 0 && (
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {proj.tags.map((tag) => (
+                      <span key={tag} className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-200">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <p className="mt-3 text-xs sm:text-sm md:text-sm text-gray-700 dark:text-gray-300 line-clamp-3">{proj.description}</p>
 
                 <div className="mt-4 flex items-center justify-between">
                   <div className="flex gap-2 flex-wrap">
                     {proj.tools.map((t) => (
-                      <span key={t} className="text-xs px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
+                      <span key={t} className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] md:text-[11px] lg:text-[12px] bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-gray-200">
                         {t}
                       </span>
                     ))}
@@ -91,19 +107,19 @@ export default function ProjectsCarousel() {
 
                   <div className="flex items-center gap-2">
                     {proj.github && (
-                      <a href={proj.github} target="_blank" rel="noreferrer" aria-label={`View ${proj.title} on GitHub`} className="inline-flex items-center justify-center w-9 h-9 bg-indigo-600 text-white rounded-full hover:opacity-95 shadow">
-                        <GithubIcon className="w-4 h-4 text-white" />
+                      <a href={proj.github} target="_blank" rel="noreferrer" aria-label={`View ${proj.title} on GitHub`} className="inline-flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-indigo-600">
+                        <GithubIcon className="w-4 h-4" />
                       </a>
                     )}
 
                     {!proj.github && proj.view && (
-                      <a href={proj.view} target="_blank" rel="noreferrer" aria-label={`View ${proj.title}`} className="inline-flex items-center justify-center w-9 h-9 bg-indigo-600 text-white rounded-full hover:opacity-95 shadow">
-                        <ExternalLinkIcon className="w-4 h-4 text-white" />
+                      <a href={proj.view} target="_blank" rel="noreferrer" aria-label={`View ${proj.title}`} className="inline-flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-indigo-600">
+                        <ExternalLinkIcon className="w-4 h-4" />
                       </a>
                     )}
 
                     {proj.docu && (
-                      <a href={proj.docu} target="_blank" rel="noreferrer" aria-label={`Documentation for ${proj.title}`} className="inline-flex items-center justify-center w-9 h-9 bg-gray-200 text-gray-800 rounded-full hover:opacity-95 shadow">
+                      <a href={proj.docu} target="_blank" rel="noreferrer" aria-label={`Documentation for ${proj.title}`} className="inline-flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-indigo-600">
                         <DocumentIcon className="w-4 h-4" />
                       </a>
                     )}
@@ -138,6 +154,6 @@ export default function ProjectsCarousel() {
           ))}
         </div>
       </div>
-    </section>
+  </div>
   );
 }
