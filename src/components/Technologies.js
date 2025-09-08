@@ -15,6 +15,7 @@ import {
   JupyterIcon,
 } from "./SkillsIcons";
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 const Technologies = () => {
   const [active, setActive] = useState("programming");
@@ -44,6 +45,9 @@ const Technologies = () => {
     );
   };
 
+  // small icon size in px
+  const ICON_SIZE = 20;
+
   const groups = {
     programming: {
       title: "Languages",
@@ -54,49 +58,43 @@ const Technologies = () => {
         { name: "SQL", icon: SQLIcon },
         { name: "R", icon: RIcon },
         { name: "JavaScript", icon: JavaScriptIcon },
-        { name: "PHP", icon: (props) => <img src="/images/icons/php.png" alt="PHP" {...props} /> },
+  { name: "PHP", icon: (props) => <Image src="/images/icons/php.png" alt="PHP" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
       ],
     },
     data: {
       title: "Data Science / AI",
         items: [
-        { name: "ETL", icon: (props) => <img src="/images/icons/etl.png" alt="ETL" {...props} /> },
-        { name: "EDA", icon: (props) => <img src="/images/icons/exploratory-analysis.png" alt="EDA" {...props} /> },
-        { name: "NLP", icon: (props) => <img src="/images/icons/nlp.png" alt="NLP" {...props} /> },
-        { name: "OpenCV", icon: (props) => <img src="/images/icons/opencv.png" alt="OpenCV" {...props} /> },
-        {
-          name: "TensorFlow",
-          icon: (props) => <img src="/images/icons/tensorflow.png" alt="Model Development" {...props} />,
-        },
-        { name: "Keras", icon: (props) => <img src="/images/icons/keras.png" alt="Keras" {...props} /> },
-        { name: "Scikit-Learn", icon: (props) => <img src="/images/icons/scikit-learn.png" alt="Scikit-Learn" {...props} /> },
-        { name: "PyTorch", icon: (props) => <img src="/images/icons/pytorch.png" alt="PyTorch" {...props} /> },
-        { name: "Hugging Face", icon: (props) => <img src="/images/icons/hugging-face.png" alt="Hugging Face" {...props} /> },
-        { name: "Flask", icon: (props) => <img src="/images/icons/flask.png" alt="Flask" {...props} className="dark:invert" /> },
-        {
-          name: "Power BI",
-          icon: (props) => <img src="/images/icons/power-bi.png" alt="Power BI" {...props} />,
-        },
-        { name: "Tableau", icon: (props) => <img src="/images/icons/tableau.png" alt="Tableau" {...props} /> },
-        { name: "Metabase", icon: (props) => <img src="/images/icons/metabase.png" alt="Metabase" {...props} /> },
-        { name: "Pandas", icon: (props) => <img src="/images/icons/pandas.png" alt="Pandas" {...props} /> },
-        { name: "Streamlit", icon: (props) => <img src="/images/icons/streamlit.png" alt="Streamlit" {...props} /> },
+  { name: "ETL", icon: (props) => <Image src="/images/icons/etl.png" alt="ETL" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "EDA", icon: (props) => <Image src="/images/icons/exploratory-analysis.png" alt="EDA" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "NLP", icon: (props) => <Image src="/images/icons/nlp.png" alt="NLP" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "OpenCV", icon: (props) => <Image src="/images/icons/opencv.png" alt="OpenCV" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "TensorFlow", icon: (props) => <Image src="/images/icons/tensorflow.png" alt="Model Development" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Keras", icon: (props) => <Image src="/images/icons/keras.png" alt="Keras" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Scikit-Learn", icon: (props) => <Image src="/images/icons/scikit-learn.png" alt="Scikit-Learn" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "PyTorch", icon: (props) => <Image src="/images/icons/pytorch.png" alt="PyTorch" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Hugging Face", icon: (props) => <Image src="/images/icons/hugging-face.png" alt="Hugging Face" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Flask", icon: (props) => <Image src="/images/icons/flask.png" alt="Flask" width={ICON_SIZE} height={ICON_SIZE} {...props} className="dark:invert" /> },
+  { name: "Power BI", icon: (props) => <Image src="/images/icons/power-bi.png" alt="Power BI" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Tableau", icon: (props) => <Image src="/images/icons/tableau.png" alt="Tableau" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Metabase", icon: (props) => <Image src="/images/icons/metabase.png" alt="Metabase" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Pandas", icon: (props) => <Image src="/images/icons/pandas.png" alt="Pandas" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Streamlit", icon: (props) => <Image src="/images/icons/streamlit.png" alt="Streamlit" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
       ],
     },
     software: {
       title: "Software Dev",
         items: [
-        { name: "React", icon: (props) => <img src="/images/icons/react.png" alt="React" {...props} className="dark:invert" /> },
-        { name: "Next.js", icon: (props) => <img src="/images/icons/nextjs.png" alt="Next.js" {...props} /> },
-        { name: "Laravel", icon: (props) => <img src="/images/icons/laravel.png" alt="Laravel" {...props} /> },
+  { name: "React", icon: (props) => <Image src="/images/icons/react.png" alt="React" width={ICON_SIZE} height={ICON_SIZE} {...props} className="dark:invert" /> },
+  { name: "Next.js", icon: (props) => <Image src="/images/icons/nextjs.png" alt="Next.js" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Laravel", icon: (props) => <Image src="/images/icons/laravel.png" alt="Laravel" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
   
-        { name: "Tailwind CSS", icon: (props) => <img src="/images/icons/tailwind-css.png" alt="Tailwind CSS" {...props} /> },
+  { name: "Tailwind CSS", icon: (props) => <Image src="/images/icons/tailwind-css.png" alt="Tailwind CSS" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
         { name: "HTML", icon: HTMLIcon },
         { name: "CSS", icon: CSSIcon },
-        { name: "Node.js", icon: (props) => <img src="/images/icons/nodejs.png" alt="Node.js" {...props} /> },
-        { name: "REST APIs", icon: (props) => <img src="/images/icons/postman.png" alt="APIs / Postman" {...props} /> },
-        { name: "Redis", icon: (props) => <img src="/images/icons/redis.png" alt="Redis" {...props} /> },
-        { name: "Docker", icon: (props) => <img src="/images/icons/docker.png" alt="Docker" {...props} /> },
+  { name: "Node.js", icon: (props) => <Image src="/images/icons/nodejs.png" alt="Node.js" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "REST APIs", icon: (props) => <Image src="/images/icons/postman.png" alt="APIs / Postman" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Redis", icon: (props) => <Image src="/images/icons/redis.png" alt="Redis" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Docker", icon: (props) => <Image src="/images/icons/docker.png" alt="Docker" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
         { name: "Git", icon: GitIcon },
         { name: "GitHub", icon: GitHubIcon },
 
@@ -106,17 +104,17 @@ const Technologies = () => {
       title: "Tools",
         items: [
         { name: "Jupyter Notebook", icon: JupyterIcon },
-        { name: "Google Colab", icon: (props) => <img src="/images/icons/google-colab.png" alt="Google Colab" {...props} /> },
+  { name: "Google Colab", icon: (props) => <Image src="/images/icons/google-colab.png" alt="Google Colab" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
         { name: "VS Code", icon: VSCodeIcon },
-        { name: "Excel / Spreadsheets", icon: (props) => <img src="/images/icons/microsoft-excel.png" alt="Excel" {...props} /> },
-        { name: "Postman", icon: (props) => <img src="/images/icons/postman.png" alt="Postman" {...props} /> },
+  { name: "Excel / Spreadsheets", icon: (props) => <Image src="/images/icons/microsoft-excel.png" alt="Excel" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Postman", icon: (props) => <Image src="/images/icons/postman.png" alt="Postman" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
         { name: "MySQL", icon: MySQLIcon },
-        { name: "PostgreSQL", icon: (props) => <img src="/images/icons/postgresql.png" alt="PostgreSQL" {...props} /> },
-        { name: "Firebase", icon: (props) => <img src="/images/icons/firebase.png" alt="Firebase" {...props} /> },
-        { name: "Linux", icon: (props) => <img src="/images/icons/linux.png" alt="Linux" {...props} className="dark:invert" /> },
-        { name: "Bash", icon: (props) => <img src="/images/icons/bash.png" alt="Bash" {...props} className="dark:invert"/> },
-        { name: "LaTeX", icon: (props) => <img src="/images/icons/latex.png" alt="LaTeX" {...props} className="dark:invert" /> },
-        { name: "Vercel", icon: (props) => <img src="/images/icons/vercel.png" alt="Vercel" {...props} className="dark:invert" /> },
+  { name: "PostgreSQL", icon: (props) => <Image src="/images/icons/postgresql.png" alt="PostgreSQL" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Firebase", icon: (props) => <Image src="/images/icons/firebase.png" alt="Firebase" width={ICON_SIZE} height={ICON_SIZE} {...props} /> },
+  { name: "Linux", icon: (props) => <Image src="/images/icons/linux.png" alt="Linux" width={ICON_SIZE} height={ICON_SIZE} {...props} className="dark:invert" /> },
+  { name: "Bash", icon: (props) => <Image src="/images/icons/bash.png" alt="Bash" width={ICON_SIZE} height={ICON_SIZE} {...props} className="dark:invert"/> },
+  { name: "LaTeX", icon: (props) => <Image src="/images/icons/latex.png" alt="LaTeX" width={ICON_SIZE} height={ICON_SIZE} {...props} className="dark:invert" /> },
+  { name: "Vercel", icon: (props) => <Image src="/images/icons/vercel.png" alt="Vercel" width={ICON_SIZE} height={ICON_SIZE} {...props} className="dark:invert" /> },
       ],
     },
   };
@@ -128,8 +126,6 @@ const Technologies = () => {
     ["tools", groups.tools.title],
   ];
 
-  // small icon size in px
-  const ICON_SIZE = 20;
 
   return (
     <div className="my-6">

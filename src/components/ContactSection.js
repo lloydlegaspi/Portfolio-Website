@@ -1,5 +1,6 @@
 import React, { useReducer, useEffect } from "react";
 import { MailIcon } from "./Icons";
+import Image from 'next/image';
 
 const initialState = {
   firstName: "",
@@ -28,21 +29,21 @@ const ContactInfo = () => (
       {/* Use a fixed width for each row so the icon column and labels align, while the whole block stays centered */}
   <div className="w-64 md:w-full mx-auto flex items-center gap-3 justify-start">
         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-black dark:bg-white border border-black/10 dark:border-white/10 shadow-sm flex items-center justify-center">
-          <img src="/images/icons/email-black.png" alt="phone" className="w-4 h-4 filter invert dark:invert-0" />
+          <Image src="/images/icons/email-black.png" alt="email" width={16} height={16} className="w-4 h-4 filter invert dark:invert-0" />
         </div>
         <a href="mailto:jlloyd.legaspi@gmail.com" className="underline text-sm md:text-base text-left">jlloyd.legaspi@gmail.com</a>
       </div>
 
       <div className="w-64 md:w-full mx-auto flex items-center gap-3 justify-start">
         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-black dark:bg-white border border-black/10 dark:border-white/10 shadow-sm flex items-center justify-center">
-          <img src="/images/icons/phone.png" alt="phone" className="w-4 h-4 filter invert dark:invert-0" />
+          <Image src="/images/icons/phone.png" alt="phone" width={16} height={16} className="w-4 h-4 filter invert dark:invert-0" />
         </div>
         <a href="tel:+639455816978" className="underline text-sm md:text-base text-left">+63 945 581 6978</a>
       </div>
 
       <div className="w-64 md:w-full mx-auto flex items-center gap-3 justify-start">
         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-black dark:bg-white border border-black/10 dark:border-white/10 shadow-sm flex items-center justify-center">
-          <img src="/images/icons/location.png" alt="location" className="w-4 h-4 filter invert dark:invert-0" />
+          <Image src="/images/icons/location.png" alt="location" width={16} height={16} className="w-4 h-4 filter invert dark:invert-0" />
         </div>
   <span className="text-sm md:text-base text-left">Manila, Philippines</span>
       </div>
@@ -76,19 +77,19 @@ const SocialLinks = () => (
 
     <div className="flex gap-5 mt-8 md:mt-0 items-center justify-center">
       <a href="https://github.com/lloydlegaspi" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
-        <img src="/images/icons/github-2.png" alt="Github" className="w-6 h-6 filter dark:invert" />
+        <Image src="/images/icons/github-2.png" alt="Github" width={24} height={24} className="w-6 h-6 filter dark:invert" />
       </a>
 
       <a href="https://www.linkedin.com/in/john-lloyd-legaspi/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
-        <img src="/images/icons/linkedin-2.png" alt="LinkedIn" className="w-6 h-6 filter" />
+        <Image src="/images/icons/linkedin-2.png" alt="LinkedIn" width={24} height={24} className="w-6 h-6 filter" />
       </a>
 
       <a href="https://www.instagram.com/lloydiiex/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
-        <img src="/images/icons/instagram-2.png" alt="Instagram" className="w-6 h-6 filter" />
+        <Image src="/images/icons/instagram-2.png" alt="Instagram" width={24} height={24} className="w-6 h-6 filter" />
       </a>
 
       <a href="https://www.facebook.com/legaspi.lloyd/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
-        <img src="/images/icons/facebook-2.png" alt="Facebook" className="w-6 h-6 filter" />
+        <Image src="/images/icons/facebook-2.png" alt="Facebook" width={24} height={24} className="w-6 h-6 filter" />
       </a>
     </div>
   </div>
@@ -233,7 +234,7 @@ const ContactSection = () => {
                         type="submit"
             className="h-12 sm:h-12 md:h-14 px-6 rounded bg-black text-white dark:bg-white dark:text-black font-semibold transition-transform hover:scale-105 w-auto sm:w-full text-sm md:text-base flex items-center justify-center gap-3"
                       >
-            <img src="/images/icons/paper-plane.png" alt="send" className="w-5 h-5 invert dark:invert-0" />
+                      <Image src="/images/icons/paper-plane.png" alt="send" width={20} height={20} className="w-5 h-5 invert dark:invert-0" />
                         <span>Send</span>
                       </button>
                     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from 'next/image';
 import { GithubIcon, LinkedInIcon, InstagramIcon, FacebookIcon, ExternalLinkIcon, DocumentIcon } from "./Icons";
 import Tooltip from "./Tooltip";
 
@@ -39,8 +40,8 @@ const SocialIcons = ({ mode }) => {
             rel="noopener noreferrer"
             className="w-6 text-black dark:text-white"
           >
-            <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }}>
-              <img src="/images/icons/github-2.png" alt="Github" className="w-6 h-6 filter dark:invert" />
+              <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }}>
+              <Image src="/images/icons/github-2.png" alt="Github" width={24} height={24} className="w-6 h-6 filter dark:invert" />
             </motion.div>
           </a>
         </Tooltip>
@@ -52,7 +53,7 @@ const SocialIcons = ({ mode }) => {
             className="w-6 text-black"
           >
             <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }}>
-              <img src="/images/icons/linkedin-2.png" alt="LinkedIn" className="w-6 h-6 filter" />
+              <Image src="/images/icons/linkedin-2.png" alt="LinkedIn" width={24} height={24} className="w-6 h-6 filter" />
             </motion.div>
           </a>
         </Tooltip>
@@ -64,7 +65,7 @@ const SocialIcons = ({ mode }) => {
             className="w-6 text-black"
           >
             <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }}>
-              <img src="/images/icons/instagram-2.png" alt="Instagram" className="w-6 h-6 filter" />
+              <Image src="/images/icons/instagram-2.png" alt="Instagram" width={24} height={24} className="w-6 h-6 filter" />
             </motion.div>
           </a>
         </Tooltip>
@@ -76,7 +77,7 @@ const SocialIcons = ({ mode }) => {
             className="w-6 text-black"
           >
             <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }}>
-              <img src="/images/icons/facebook-2.png" alt="Facebook" className="w-6 h-6 filter" />
+              <Image src="/images/icons/facebook-2.png" alt="Facebook" width={24} height={24} className="w-6 h-6 filter" />
             </motion.div>
           </a>
         </Tooltip>
@@ -88,7 +89,7 @@ const SocialIcons = ({ mode }) => {
             className="w-6 text-black dark:text-white inline-flex items-center"
           >
             <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }}>
-              <img src="/images/icons/email-2.png" alt="Email" className="w-6 h-6 filter dark:invert" />
+              <Image src="/images/icons/email-2.png" alt="Email" width={24} height={24} className="w-6 h-6 filter dark:invert" />
             </motion.div>
           </a>
         </Tooltip>

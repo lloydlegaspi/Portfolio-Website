@@ -231,13 +231,11 @@ const Certificates = () => {
               <button onClick={closeViewer} className="text-sm px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">x</button>
             </div>
 
-            <div className="w-full h-[80vh] bg-white dark:bg-gray-900">
+      <div className="w-full h-[80vh] bg-white dark:bg-gray-900 relative">
               {isPdf(viewer.file) ? (
                 <iframe src={encodeURI(viewer.file)} className="w-full h-full" title={viewer.title} />
               ) : (
-                // next/image can't easily fill inside dynamic modal when using src from public and without layout; use img as fallback
-                // but we already used next/image for thumbnails; here use native img for simplicity
-                <img src={encodeURI(viewer.file)} alt={viewer.title} className="w-full h-full object-contain bg-gray-100" />
+        <Image src={encodeURI(viewer.file)} alt={viewer.title} fill className="object-contain bg-gray-100" />
               )}
             </div>
           </div>
@@ -263,11 +261,11 @@ const Certificates = () => {
                 ‹
               </button>
 
-              <div className="w-full h-full flex items-center justify-center">
+              <div className="w-full h-full flex items-center justify-center relative">
                 {isPdf(collectionViewer.files[collectionViewer.index]) ? (
                   <iframe src={encodeURI(collectionViewer.files[collectionViewer.index])} className="w-full h-full" title={`file-${collectionViewer.index}`} />
                 ) : (
-                  <img src={encodeURI(collectionViewer.files[collectionViewer.index])} className="w-full h-full object-contain" alt={`file-${collectionViewer.index}`} />
+                  <Image src={encodeURI(collectionViewer.files[collectionViewer.index])} alt={`file-${collectionViewer.index}`} fill className="object-contain" />
                 )}
               </div>
 
