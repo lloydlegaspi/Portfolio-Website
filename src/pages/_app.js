@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   // routes where the global NavBar should be hidden
-  const hideNavRoutes = ["/projects"];
+  const hideNavRoutes = [];
   const showNav = !hideNavRoutes.includes(router.pathname);
   return (
     <>

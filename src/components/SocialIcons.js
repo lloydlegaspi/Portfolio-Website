@@ -12,20 +12,20 @@ const SocialIcons = ({ mode }) => {
         <a
           href="/Legaspi_John_Lloyd_Resume.pdf"
           target="_blank"
-          className="flex items-center gap-2 h-9 px-3 text-sm rounded-md bg-dark text-light font-medium border border-transparent dark:bg-light dark:text-dark transition-shadow hover:shadow-sm"
+          className="flex items-center gap-2 h-7 px-3 text-xs rounded bg-black text-white dark:bg-white dark:text-black font-medium border border-transparent transform transition-transform duration-200 hover:scale-105 hover:shadow-sm"
           download={true}
           aria-label="Download CV"
         >
-          <DocumentIcon className="w-4 ml-1" />
+          <DocumentIcon className="w-3 ml-1" />
           <span className="leading-none">Download CV</span>
         </a>
 
         <Link
           href="/projects"
-          className="flex items-center justify-center gap-2 h-9 px-4 min-w-[140px] text-sm rounded-md bg-white dark:bg-dark text-dark dark:text-white font-semibold border border-transparent transition-shadow hover:shadow-sm"
+          className="flex items-center justify-center gap-1 h-7 px-3 min-w-[100px] text-xs rounded bg-black text-white dark:bg-white dark:text-black font-semibold border border-transparent transform transition-transform duration-200 hover:scale-105 hover:shadow-sm"
           aria-label="View Projects"
         >
-          <ExternalLinkIcon className="w-4 ml-1" />
+          <ExternalLinkIcon className="w-3 ml-1" />
           <span className="leading-none">View Projects</span>
         </Link>
       </div>

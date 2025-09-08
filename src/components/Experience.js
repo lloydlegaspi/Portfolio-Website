@@ -67,7 +67,7 @@ const ToolBadges = ({ tools }) => {
 
 export const ExperienceCard = React.memo(function ExperienceCard({ logo, title, company, time, location, bullets, tag, tools, logoSize, bodyClass, statPill }) {
   return (
-    <article className="w-full max-w-full p-3 sm:p-4 md:p-6 lg:p-6 xl:p-6 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900 transition-transform transform hover:-translate-y-1 hover:shadow-lg overflow-hidden">
+    <article className="w-full max-w-full p-3 sm:p-4 md:p-6 lg:p-6 xl:p-6 border border-gray-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-900 transition-transform transform hover:-translate-y-1 hover:shadow-lg overflow-hidden">
       <div className="w-full max-w-full flex flex-col items-start gap-2 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-4 px-2 sm:px-3 md:px-4 lg:px-6 xl:px-6 py-4 sm:py-4 md:py-3 lg:py-4 xl:py-4">
         <div className="w-full">
           <div className="flex flex-col 2xl:flex-row items-center 2xl:items-start gap-2 sm:gap-3 md:gap-4">

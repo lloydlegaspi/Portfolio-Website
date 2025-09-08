@@ -208,17 +208,8 @@ const Projects = () => {
       </Head>
       <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
-          {/* Back button shown when NavBar is hidden on this route */}
-          <div className="w-full mb-6">
-            <Link href="/" className="inline-flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:underline" aria-label="Back to home">
-              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
-                <BackIcon className="w-4 h-4" />
-              </span>
-              <span className="text-sm">Back</span>
-            </Link>
-          </div>
           {/* Minimalist filter: small toggle button that opens a compact panel */}
-          <div className="w-full mb-6 flex justify-end items-center gap-4">
+          <div className="w-full mt-14 mb-6 flex justify-end items-center gap-4">
             <div className="flex items-center gap-2">
               <div className="flex flex-wrap items-center gap-2">
                 {allTags.map((t) => (

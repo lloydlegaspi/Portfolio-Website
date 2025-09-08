@@ -42,10 +42,10 @@ export default function ProjectsCarousel() {
         <h3 className="text-3xl font-bold">Projects rise from foundations and skills.</h3>
         <Link
           href="/projects"
-          className="flex items-center justify-center gap-2 h-9 px-4 min-w-[140px] text-sm rounded-md bg-white text-black dark:bg-white dark:text-black font-semibold border border-transparent transition-shadow hover:shadow-sm"
+          className="flex items-center justify-center gap-1 h-7 px-3 min-w-[100px] text-xs rounded bg-black text-white dark:bg-white dark:text-black font-semibold border border-transparent transform transition-transform duration-200 hover:scale-105 hover:shadow-sm"
           aria-label="View Projects"
         >
-          <ExternalLinkIcon className="w-4 mr-2" />
+          <ExternalLinkIcon className="w-3 mr-1" />
           <span className="leading-none">View All</span>
         </Link>
       </div>
@@ -63,7 +63,7 @@ export default function ProjectsCarousel() {
                 key={proj.id}
                 onClick={() => (pos === 0 ? prev() : pos === 2 ? next() : null)}
                 style={{ willChange: "transform, opacity, filter" }}
-                className={`cursor-pointer select-none transition-all duration-700 ease-in-out transform rounded-xl border border-solid p-3 bg-white dark:bg-gray-900 dark:border-gray-700 flex-shrink-0 ${
+                className={`cursor-pointer select-none transition-all duration-700 ease-in-out transform rounded-xl border border-solid p-3 bg-white dark:bg-neutral-900 dark:border-neutral-700 flex-shrink-0 hover:scale-105 hover:shadow-xl ${
                   isCenter
                     ? "w-[360px] scale-100 z-30 shadow-md filter-none"
                     : "w-[260px] scale-95 opacity-75 z-10 filter blur-sm"
@@ -131,12 +131,12 @@ export default function ProjectsCarousel() {
         </div>
 
         {/* overlay chevrons */}
-        <button onClick={prev} aria-label="Previous project" className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition shadow">
+  <button onClick={prev} aria-label="Previous project" className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition transform duration-200 hover:scale-110 shadow z-50">
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
             <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
-        <button onClick={next} aria-label="Next project" className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition shadow">
+  <button onClick={next} aria-label="Next project" className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition transform duration-200 hover:scale-110 shadow z-50">
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
             <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -149,7 +149,7 @@ export default function ProjectsCarousel() {
               key={i}
               onClick={() => setIndex(i)}
               aria-label={`Go to project ${i + 1}`}
-              className={`w-2 h-2 rounded-full ${i === index ? "bg-indigo-600" : "bg-gray-300 dark:bg-gray-600"}`}
+              className={`w-2 h-2 rounded-full transform transition-transform duration-200 ${i === index ? "bg-black dark:bg-white" : "bg-gray-300 dark:bg-gray-600"} hover:scale-125 focus:outline-none`}
             />
           ))}
         </div>

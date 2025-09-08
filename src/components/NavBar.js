@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { href: "/#experience", title: "Experience" },
   { href: "/#education-certificates", title: "Education" },
   { href: "/#projects", title: "Projects" },
+  { href: "/#contact", title: "Contact" },
 ];
 
 const CustomLink = ({ href, title, className = "", children, isActive = false }) => {
@@ -130,6 +131,7 @@ const NavBar = () => {
       "experience",
       "education-certificates",
       "projects",
+  "contact",
     ];
 
     const getHrefForId = (id) => (id === "home" ? "/" : `/#${id}`);

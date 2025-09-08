@@ -6,6 +6,7 @@ import Education from "@/components/Education";
 import ExperienceEducationTabs from "@/components/ExperienceEducationTabs";
 import Technologies from "@/components/Technologies";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
+import ContactSection from "@/components/ContactSection";
 
 const ABOUT_IMAGES = [
   "/images/aboutme/about-pic-1.png",
@@ -87,6 +88,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ExperienceEducationSection />
+  <ContactSection />
       </main>
     </>
   );
