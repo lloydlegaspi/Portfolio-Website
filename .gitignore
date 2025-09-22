@@ -37,3 +37,7 @@ yarn-error.log*
 *.mjs
 *.cjs
 .pnp.cjs
+
+# data
+/data
+/src/data
