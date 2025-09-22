@@ -9,98 +9,86 @@ import { motion } from "framer-motion";
 
 const FramerImage = motion(Image);
 
-const Project = ({ title, img, link, github, view, docu, description, date, hideLinks, tools = [], tags = [] }) => {
+const Project = ({ title, img, link, github, view, docu, description, date, hideLinks, tools = [], tags = [], type = 'individual', role = '', onImageClick }) => {
   return (
-    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light xs:p-4 min-h-[520px]">
-      <div className="absolute top-0 -right-3 -z-10 w-[100%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl dark:bg-light md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]" />
-      <span className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">{date}</span>
-      {link ? (
-        <Link
-          href={link}
-          target="_blank"
-          className="w-full relative cursor-pointer overflow-hidden rounded-lg h-[200px]"
-        >
-          <FramerImage
-            src={img}
-            alt={title}
-            fill
-            className="object-cover rounded-xl"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          />
-        </Link>
-      ) : (
-        <div className="w-full relative cursor-default overflow-hidden rounded-lg h-[200px]">
-          <FramerImage
-            src={img}
-            alt={title}
-            fill
-            className="object-cover rounded-xl"
-            transition={{ duration: 0.2 }}
-          />
+    <article className={`cursor-pointer select-none transition-all duration-700 ease-in-out transform rounded-xl border border-solid p-3 bg-white dark:bg-neutral-900 dark:border-neutral-700 hover:scale-105 hover:shadow-xl`}> 
+      <div className="flex items-center justify-between">
+        <span className="text-xs sm:text-xs md:text-sm text-gray-500 dark:text-gray-400">{date}</span>
+        <span className="text-xs sm:text-xs md:text-sm text-gray-500 dark:text-gray-400">
+          {type === 'team' ? (role ? `Team • ${role}` : 'Team') : 'Individual'}
+        </span>
+      </div>
+
+      {/* Image opens modal on click; keyboard accessible via Enter */}
+      <div
+        className="w-full relative overflow-hidden rounded-md mt-2 block h-[176px]"
+        role="button"
+        tabIndex={0}
+        onClick={() => onImageClick && onImageClick(img, title)}
+        onKeyDown={(e) => { if (e.key === 'Enter') onImageClick && onImageClick(img, title); }}
+      >
+        <FramerImage src={img} alt={title} fill className="object-cover rounded-lg cursor-zoom-in" />
+      </div>
+
+      <h4 className={`font-semibold text-base sm:text-base md:text-lg lg:text-lg mt-3 leading-tight text-gray-900 dark:text-white`}>
+        {link ? (
+          <Link href={link} target="_blank" className="hover:underline underline-offset-2">{title}</Link>
+        ) : (
+          title
+        )}
+      </h4>
+
+      
+
+      <p className="mt-3 text-xs sm:text-sm md:text-sm text-gray-700 dark:text-gray-300 line-clamp-3">{description}</p>
+
+      {Array.isArray(tags) && tags.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span key={tag} className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-200">
+              {tag}
+            </span>
+          ))}
         </div>
       )}
 
-      <div className="w-full flex flex-col items-start justify-between mt-4">
-        {link ? (
-          <Link href={link} target="_blank" className="hover:underline underline-offset-2">
-            <h2 className="my-2 w-full text-left text-2xl font-bold lg:text-xl">{title}</h2>
-          </Link>
-        ) : (
-          <h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl">{title}</h2>
-        )}
-
-  <p className="text-base md:text-sm text-left text-gray-600 dark:text-gray-300 mt-2">{description}</p>
-
-        {Array.isArray(tags) && tags.length > 0 && (
-          <div className="mt-3 flex gap-2 flex-wrap">
-            {tags.map((tag) => (
-              <span key={tag} className="text-xs px-2 py-1 rounded bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
-                {tag}
+      {!hideLinks && (
+        <div className="mt-4 flex items-center justify-between w-full">
+          <div className="flex gap-2 flex-wrap">
+            {Array.isArray(tools) && tools.map((t) => (
+              <span key={t} className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] md:text-[11px] lg:text-[12px] bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-gray-200">
+                {t}
               </span>
             ))}
           </div>
-        )}
 
-        {!hideLinks && (
-          <div className="w-full mt-2 flex items-center justify-between">
-            <div className="flex gap-2 flex-wrap">
-              {Array.isArray(tools) &&
-                tools.map((t) => (
-                  <span key={t} className="text-xs px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
-                    {t}
-                  </span>
-                ))}
-            </div>
+          <div className="flex items-center gap-2">
+            {github && (
+              <a href={github} target="_blank" rel="noreferrer" aria-label={`View ${title} on GitHub`} className="inline-flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-indigo-600">
+                <GithubIcon className="w-4 h-4" />
+              </a>
+            )}
 
-            <div className="flex items-center gap-2">
-              {github && (
-                <Link href={github} target="_blank" className="w-8 md:w-6">
-                  <GithubIcon />
-                </Link>
-              )}
+            {!github && link && (
+              <a href={link} target="_blank" rel="noreferrer" aria-label={`Open ${title}`} className="inline-flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-indigo-600">
+                <ExternalLinkIcon className="w-4 h-4" />
+              </a>
+            )}
 
-              {link && !github && (
-                <Link href={link} target="_blank" className="w-8 md:w-6" aria-label={`Open ${title}`}>
-                  <ExternalLinkIcon />
-                </Link>
-              )}
+            {!github && !link && view && (
+              <a href={view} target="_blank" rel="noreferrer" aria-label={`View ${title}`} className="inline-flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-indigo-600">
+                <ExternalLinkIcon className="w-4 h-4" />
+              </a>
+            )}
 
-              {view && !github && (
-                <Link href={view} target="_blank" className="w-8 md:w-6" aria-label={`View ${title}`}>
-                  <ExternalLinkIcon />
-                </Link>
-              )}
-
-              {docu && (
-                <Link href={docu} target="_blank" className="w-8 md:w-6" aria-label={`Documentation for ${title}`}>
-                  <DocumentIcon />
-                </Link>
-              )}
-            </div>
+            {docu && (
+              <a href={docu} target="_blank" rel="noreferrer" aria-label={`Documentation for ${title}`} className="inline-flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-indigo-600">
+                <DocumentIcon className="w-4 h-4" />
+              </a>
+            )}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </article>
   );
 };
@@ -109,6 +97,10 @@ const Projects = () => {
   const [selectedTags, setSelectedTags] = React.useState([]);
   const [selectedYear, setSelectedYear] = React.useState("");
   const [sortDirection, setSortDirection] = React.useState("desc"); // desc by default
+  const [viewer, setViewer] = React.useState({ open: false, src: null, alt: '' });
+
+  const openViewer = (src, alt) => setViewer({ open: true, src, alt });
+  const closeViewer = () => setViewer({ open: false, src: null, alt: '' });
 
   // derive available filters
   const allTags = React.useMemo(() => {
@@ -223,9 +215,7 @@ const Projects = () => {
                     {t}
                   </button>
                 ))}
-                {selectedTags.length > 0 && (
-                  <button onClick={() => setSelectedTags([])} className="text-xs text-blue-600 ml-2">Clear</button>
-                )}
+                
               </div>
 
               <button
@@ -251,10 +241,23 @@ const Projects = () => {
                   hideLinks={p.hideLinks}
                   tools={p.tools}
                   tags={p.tags}
+                  type={p.type}
+                  role={p.role}
+                  onImageClick={openViewer}
                 />
               </div>
             ))}
           </div>
+          {viewer.open && (
+            <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-4">
+              <div className="relative w-full max-w-4xl max-h-[90vh] bg-transparent rounded-lg overflow-hidden">
+                <button onClick={closeViewer} className="absolute top-3 right-3 z-20 bg-white dark:bg-neutral-900 rounded-full p-2 text-sm">✕</button>
+                <div className="w-full h-[80vh] bg-white dark:bg-neutral-900 flex items-center justify-center relative">
+                  <Image src={viewer.src} alt={viewer.alt} fill className="object-contain" />
+                </div>
+              </div>
+            </div>
+          )}
         </Layout>
       </main>
     </>

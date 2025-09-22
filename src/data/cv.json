@@ -1,0 +1,155 @@
+{
+  "name": "John Lloyd S. Legaspi",
+  "contact": {
+    "email": "jlloyd.legaspi@gmail.com",
+    "phone": "+63 9455816978",
+    "linkedin": "https://www.linkedin.com/in/john-lloyd-legaspi",
+    "github": "https://github.com/lloydlegaspi"
+  },
+  "career_objective": "Detail-oriented computer science undergraduate with hands-on experience in machine learning, software development, and collaborative open-source projects. Seeking an internship to apply technical knowledge and skills in a dynamic, growth-driven environment.",
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science (BSCS)",
+      "institution": "Polytechnic University of the Philippines – Manila",
+      "years": "2022 - Present",
+      "details": [
+        "Relevant Coursework: Data Structures and Algorithms, OOP, Introduction to AI, NLP, Machine Learning, Software Engineering",
+        "DOST Junior Level Science Scholarship (JLSS) 2024 Qualifier",
+        "Cumulative GPA: 1.14"
+      ]
+    },
+    {
+      "strand": "STEM (Science, Technology, Engineering and Mathematics)",
+      "institution": "Norzagaray National High School",
+      "years": "2016 - 2022",
+      "details": [
+        "Consistent Excellence Awardee",
+        "Outstanding Campus Journalist – Editor-in-Chief (2021-2022)"
+      ]
+    }
+  ],
+  "technical_skills": {
+    "programming": ["Python", "C", "Java", "SQL", "R", "JavaScript", "PHP"],
+    "ml_data_science": [
+      "Data Preprocessing", "EDA", "NLP", "Regex",
+      "Model Development & Evaluation (scikit-learn, TensorFlow, Keras, PyTorch)",
+      "Data Visualization & BI (pandas, NumPy, Streamlit, Plotly, Power BI, Metabase)"
+    ],
+    "software_development": [
+      "React", "Next.js", "Laravel", "Flask", "Tailwind CSS",
+      "REST APIs", "Redis", "Docker", "Render", "Railway", "Vercel", "Git/GitHub"
+    ],
+    "tools_technologies": [
+      "Jupyter Notebook", "Google Colab", "VS Code",
+      "Excel/Spreadsheets", "Postman", "MySQL", "PostgreSQL", "Firebase"
+    ]
+  },
+  "experience": [
+    {
+      "role": "Data Science Intern",
+      "company": "Lamina Studios, LLC (Remote – Washington, US)",
+      "date": "July – August 2025",
+      "responsibilities": [
+        "Completed 5-week immersion in Python, preprocessing, and model evaluation",
+        "Performed EDA on logistics datasets and built interactive dashboards (Chart.js, Plotly, Metabase)",
+        "Developed and integrated full-stack analytics dashboard into a smart logistics platform",
+        "Containerized services with Docker and deployed to Render, Railway, and Vercel"
+      ]
+    },
+    {
+      "role": "Data Science Intern",
+      "company": "NIDEC Control Techniques (Remote – Thailand)",
+      "date": "Nov 2023 – March 2024",
+      "responsibilities": [
+        "Developed admin dashboard mockup with Streamlit & Python + MySQL backend",
+        "Wrote optimized SQL queries and backend logic",
+        "Cleaned/validated datasets to improve data accuracy"
+      ]
+    },
+    {
+      "role": "Junior ML Engineer (Project-based)",
+      "company": "Omdena – Berlin Chapter",
+      "date": "Aug – Oct 2023",
+      "responsibilities": [
+        "Collaborated with 38 professionals on waste management optimization project",
+        "Conducted EDA with Python visualizations",
+        "Led project deployment & presentation team"
+      ]
+    },
+    {
+      "role": "Lead ML Engineer (Project-based)",
+      "company": "Facts on the Ground - GDSC PUP Main",
+      "date": "Feb – Aug 2023",
+      "responsibilities": [
+        "Led sub-team of 7 for data wrangling (20.2% noise reduction)",
+        "Assisted in preprocessing with NLTK",
+        "Helped build web app integrating ML models (sentiment analysis, classification, summarization)"
+      ]
+    }
+  ],
+  "projects": [
+    { "title": "Portfolio Website", "date": "May 2025", "tech": ["Next.js", "React", "Tailwind CSS"], "link": "https://github.com/lloydlegaspi/Portfolio-Website" },
+    { "title": "Maze Pathfinder", "date": "May 2025", "tech": ["React", "JavaScript", "CSS"], "link": "https://github.com/lloydlegaspi/maze-pathfinder" },
+    { "title": "CCIS Concern Hub", "date": "Oct 2024 – Jan 2025", "tech": ["React", "Tailwind CSS", "Firebase"], "link": "https://github.com/AkzechKyla/CCISConcernHub" },
+    { "title": "Mono", "date": "Oct 2024 – Jan 2025", "tech": ["Python", "Streamlit"], "link": "https://github.com/lloydlegaspi/Mono" },
+    { "title": "Basura Meow, Itapon Meow", "date": "Oct 2024 – Jan 2025", "tech": ["C#", "Unity"], "link": "https://github.com/yam-1111/BasuraMeowItaponMeow-ng" },
+    { "title": "Taskify", "date": "May – July 2024", "tech": ["Python", "Streamlit"], "link": "https://github.com/lloydlegaspi/Taskify-DAA-Project" },
+    { "title": "TESDAli", "date": "May – July 2024", "tech": ["Python", "Streamlit"], "link": "https://github.com/lloydlegaspi/TESDAli_IM_Project" }
+  ],
+  "organizations": [
+    {
+      "name": "Google Developer Student Clubs - PUP Main",
+      "role": "Data Co-Lead",
+      "date": "Sept 2023 – June 2024",
+      "details": [
+        "Evaluated/onboarded new members",
+        "Created learning roadmap for data team",
+        "Aligned chapter goals with CTO & Data Lead"
+      ]
+    },
+    {
+      "name": "Junior Data and AI Cadet",
+      "date": "Oct 2022 – Aug 2023",
+      "details": [
+        "Contributed to ML startup project",
+        "Hands-on experience in SQL, visualization, data manipulation",
+        "DataCamp scholarship"
+      ]
+    },
+    {
+      "name": "Internal Auditor (Finance Committee)",
+      "date": "March – Aug 2023",
+      "details": [
+        "Drafted sponsorship guide",
+        "Created event-based balance sheets"
+      ]
+    },
+    {
+      "name": "PUP The Programmers' Guild",
+      "role": "Devskolar",
+      "date": "May 2023 – June 2024"
+    },
+    {
+      "name": "PUP Association of Students for Computer Intelligence Integration (PUP-ASCII)",
+      "role": "Research and Extensions Committee Member",
+      "date": "Oct 2022 – Aug 2023",
+      "details": [
+        "Wrote captions & articles (+20% engagement)",
+        "Helped organize seminars, competitions, outreach"
+      ]
+    }
+  ],
+  "certifications": [
+    { "title": "Civil Service Professional Eligibility", "issuer": "CSC Philippines", "date": "Aug 2024" },
+    { "title": "Google Career Certificates - Advanced Data Analytics", "issuer": "Coursera", "date": "Nov 2022 – Present", "id": "FCNW5ITLTRD3" },
+    { "title": "IT Automation with Python", "issuer": "Coursera", "id": "TWZIWG0C3V96" },
+    { "title": "Data Analytics Professional Certificate", "issuer": "Coursera", "id": "KYQCGXVYJJTJ" },
+    { "title": "Data Scientist Associate", "issuer": "DataCamp", "id": "DSA0019865803657" },
+    { "title": "Python Data Associate", "issuer": "DataCamp", "id": "PDA0010244439155" },
+    { "title": "Data Analyst Associate", "issuer": "DataCamp", "id": "DAA0013777622726" },
+    { "title": "Project SPARTA PH – Computing Microspecialization", "date": "June – Dec 2023", "id": "NZ49212" },
+    { "title": "Project SPARTA PH – Data Governance", "id": "IX68348" },
+    { "title": "DICT – Python for Beginners", "date": "Feb 2023", "id": "4dbfca49-246a-4caf-9874-2b262c0543b1" },
+    { "title": "Zuitt Coding Bootcamp – Basic Web Development", "date": "Feb 2023", "id": "02507" }
+  ]
+}

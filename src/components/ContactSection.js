@@ -24,7 +24,7 @@ function reducer(state, action) {
 }
 
 const ContactInfo = () => (
-  <div className="pt-0 px-0 sm:pt-1 sm:px-0 md:pt-2 md:px-0 lg:pt-2 lg:px-0 xl:pt-2 xl:px-0 2xl:pt-2 2xl:px-0 flex flex-col items-center justify-center mt-4 mb-16 md:mb-8">
+  <div className="pt-0 px-0 sm:pt-1 sm:px-0 md:pt-2 md:px-0 lg:pt-2 lg:px-0 xl:pt-2 xl:px-0 2xl:pt-2 2xl:px-0 flex flex-col items-center justify-center mt-4 mb-8 md:mb-6">
     <div className="text-sm md:text-sm lg:text-sm xl:text-base text-gray-700 dark:text-gray-300 space-y-3 text-center">
       {/* Use a fixed width for each row so the icon column and labels align, while the whole block stays centered */}
   <div className="w-64 md:w-full mx-auto flex items-center gap-3 justify-start">
@@ -75,23 +75,7 @@ const SocialLinks = () => (
         </a>
       </div>
 
-    <div className="flex gap-5 mt-8 md:mt-0 items-center justify-center">
-      <a href="https://github.com/lloydlegaspi" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
-        <Image src="/images/icons/github-2.png" alt="Github" width={24} height={24} className="w-6 h-6 filter dark:invert" />
-      </a>
-
-      <a href="https://www.linkedin.com/in/john-lloyd-legaspi/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
-        <Image src="/images/icons/linkedin-2.png" alt="LinkedIn" width={24} height={24} className="w-6 h-6 filter" />
-      </a>
-
-      <a href="https://www.instagram.com/lloydiiex/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
-        <Image src="/images/icons/instagram-2.png" alt="Instagram" width={24} height={24} className="w-6 h-6 filter" />
-      </a>
-
-      <a href="https://www.facebook.com/legaspi.lloyd/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
-        <Image src="/images/icons/facebook-2.png" alt="Facebook" width={24} height={24} className="w-6 h-6 filter" />
-      </a>
-    </div>
+  {/* Social icons removed per request; buttons above retained */}
   </div>
 );
 
@@ -144,10 +128,10 @@ const ContactSection = () => {
       id="contact"
       className={
         "w-full bg-light dark:bg-dark pt-0 " +
-        "pb-16 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28 2xl:pb-32"
+        "pb-8 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-12 2xl:pb-12"
       }
     >
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pt-24 pb-12 sm:pb-14 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pt-12 pb-6 sm:pb-6 md:pb-8 lg:pb-8 xl:pb-8 2xl:pb-8">
         <div className="w-full mt-6 sm:mt-6 md:mt-6 lg:mt-6 xl:mt-6 2xl:mt-6">
           <div className="grid grid-cols-3 md:grid-cols-1 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-14 2xl:gap-16 items-start">
 
@@ -156,9 +140,8 @@ const ContactSection = () => {
               <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-3xl font-bold mb-2">Let’s Connect!</h3>
               <p className="max-w-2xl md:max-w-full font-medium text-sm leading-relaxed mt-3 mb-8">I’m open to collaborations, internships, job offers, and exciting opportunities.</p>
 
-              {/* Contact details and social links (extracted components) */}
+              {/* Contact details and CTA buttons */}
               <ContactInfo />
-              <SocialLinks />
 
             </div>
 
