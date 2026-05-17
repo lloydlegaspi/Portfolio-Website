@@ -222,7 +222,7 @@ const PROJECTS = [
   view: "https://orange-island-01cefc100.2.azurestaticapps.net/",
   github: "https://github.com/lloydlegaspi/SnakeSight",
   type: "team",
-  role: "Thesis Lead",
+  role: "Thesis Lead / Model Developer",
   tools: ["Next.js", "FastAPI", "TensorFlow"],
   tags: ["AI/ML", "Web Development"],
 },
@@ -270,7 +270,7 @@ const PROJECTS = [
   type: "team",
   role: "Full Stack Developer",
   tools: ["Expo", "React Native", "TypeScript", "Supabase"],
-  tags: ["Mobile Development", "Web Development"],
+  tags: ["Mobile Development"],
 },
 {
   id: "buzzarfeed",
@@ -285,9 +285,44 @@ const PROJECTS = [
   docu:
     "https://drive.google.com/file/d/1bIre9paAvdEMJDR2sx9pId95wt5phOmf/view?usp=sharing",
   type: "team",
-  role: "Full Stack Developer",
+  role: "Frontend Developer",
   tools: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
   tags: ["Web Development"],
+},
+{
+  id: "cyclistic-bike-share",
+  title: "Cyclistic Bike Share Analysis",
+  date: "April 2026",
+  image: "/images/projects/Cyclistic.png",
+  description:
+    "An end-to-end data analytics case study analyzing Cyclistic bike-share trip data to compare casual riders and annual members, uncover behavior patterns, and recommend conversion-focused marketing strategies.",
+  link: "https://github.com/lloydlegaspi/Cyclistic_Bike_Share",
+  github: "https://github.com/lloydlegaspi/Cyclistic_Bike_Share",
+  type: "individual",
+  role: "Data Analyst",
+  tools: ["Python", "Pandas", "NumPy", "Jupyter Notebook", "Matplotlib", "Seaborn"],
+  tags: ["Data Analytics", "Dashboards"],
+},
+{
+  id: "recall",
+  title: "Recall",
+  date: "April 2026",
+  image: "/images/projects/Recall.png",
+  description:
+    "A study hub that turns notes, PDFs, and lecture materials into AI-generated quizzes, subject-based chat, and study workspaces with citations and adaptive learning.",
+  link: "https://github.com/lloydlegaspi/recall",
+  github: "https://github.com/lloydlegaspi/recall",
+  type: "individual",
+  tools: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Supabase",
+    "Azure OpenAI",
+    "Tailwind CSS",
+    "shadcn/ui",
+  ],
+  tags: ["AI/ML", "Web Development"],
 },
 ];
 
