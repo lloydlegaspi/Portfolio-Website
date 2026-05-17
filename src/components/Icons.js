@@ -53,7 +53,7 @@ export const InstagramIcon = ({ className, ...rest }) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     {...rest}
-    className={`w-full h-auto ${className}`}>
+    className={className}>
     {/* simple monochrome Instagram glyph (outline) */}
     <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="1.6" />
     <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.6" />
