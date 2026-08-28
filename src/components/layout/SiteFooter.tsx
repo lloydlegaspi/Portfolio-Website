@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { navigation, profile } from "@/content";
 
@@ -6,12 +7,27 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-neutral-200 dark:border-neutral-800">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-8 px-6 py-8 md:flex-col md:text-center sm:px-5">
+      <div className="site-container flex items-center justify-between gap-8 py-8 md:flex-col md:text-center">
         <Link
           href="/"
           className="focus-ring flex items-center gap-4 rounded-md"
         >
-          <span className="text-lg font-black tracking-[-0.08em]">JL</span>
+          <span>
+            <Image
+              src="/images/logo/logo-jl-white-bg.png"
+              alt="John Lloyd Legaspi logo"
+              width={48}
+              height={48}
+              className="size-12 object-contain dark:hidden"
+            />
+            <Image
+              src="/images/logo/logo-jl-black-bg.png"
+              alt="John Lloyd Legaspi logo"
+              width={48}
+              height={48}
+              className="hidden size-12 object-contain dark:block"
+            />
+          </span>
           <span className="text-left">
             <strong className="block text-sm">{profile.shortName}</strong>
             <span className="text-[11px] text-neutral-500 dark:text-neutral-400">

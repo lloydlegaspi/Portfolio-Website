@@ -69,7 +69,7 @@ export function ContactSection() {
         </div>
         <form
           onSubmit={submit}
-          className="rounded-lg border border-neutral-200 bg-white p-7 dark:border-neutral-800 dark:bg-neutral-950 sm:p-5"
+          className="w-full max-w-3xl justify-self-end rounded-lg border border-neutral-200 bg-white p-7 dark:border-neutral-800 dark:bg-neutral-950 lg:max-w-none sm:p-5"
           noValidate
         >
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-1">

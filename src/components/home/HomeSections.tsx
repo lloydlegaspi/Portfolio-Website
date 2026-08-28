@@ -46,9 +46,8 @@ export function HomeSections() {
 function Hero() {
   return (
     <section id="home" className="scroll-mt-24">
-      <div className="mx-auto grid min-h-[680px] max-w-6xl grid-cols-[1.08fr_0.92fr] items-center gap-20 px-6 py-24 lg:min-h-0 lg:grid-cols-1 lg:gap-12 lg:py-20 sm:px-5 sm:py-16">
+      <div className="site-container grid min-h-[680px] grid-cols-[1.1fr_0.9fr] items-center gap-24 py-24 lg:min-h-0 lg:grid-cols-1 lg:gap-12 lg:py-20 sm:py-16">
         <div className="max-w-2xl">
-          <p className="section-kicker">Data engineer</p>
           <h1 className="text-6xl font-bold leading-[1.02] tracking-[-0.055em] md:text-5xl sm:text-4xl">
             {profile.shortName}
           </h1>
@@ -77,14 +76,14 @@ function Hero() {
           </div>
           <SocialLinks className="mt-7" />
         </div>
-        <div className="relative mx-auto aspect-[5/5.35] w-full max-w-[440px] overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-900 lg:max-w-sm">
+        <div className="relative mx-auto aspect-[5/5.35] w-full max-w-[500px] overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-900 lg:max-w-sm">
           <Image
             src="/images/profile/prof-pic-2.png"
             alt="John Lloyd Legaspi"
             fill
-            sizes="(max-width: 1023px) 384px, 440px"
+            sizes="(max-width: 1023px) 384px, 500px"
             preload
-            className="object-contain object-bottom grayscale"
+            className="object-contain object-bottom"
           />
         </div>
       </div>
@@ -95,7 +94,7 @@ function Hero() {
 function About() {
   return (
     <section id="about" className="section-shell scroll-mt-24">
-      <div className="grid grid-cols-[0.9fr_1.1fr] gap-20 lg:grid-cols-1 lg:gap-12">
+      <div className="grid grid-cols-[0.72fr_1fr] gap-24 lg:grid-cols-1 lg:gap-12">
         <div>
           <p className="section-kicker">About me</p>
           <h2 className="section-title max-w-sm">
@@ -227,7 +226,16 @@ function EducationSection() {
             </div>
           </div>
           <div className="p-7 sm:p-5">
-            <h2 className="section-kicker">Certifications</h2>
+            <div className="flex items-center justify-between gap-4">
+              <h2 className="section-kicker mb-0">Certifications</h2>
+              <Link
+                href="/certifications"
+                className="focus-ring inline-flex items-center gap-1 rounded-sm text-[11px] font-semibold underline-offset-4 hover:underline"
+              >
+                View all certifications
+                <Icon name="arrow" className="size-3.5" />
+              </Link>
+            </div>
             <div className="mt-7 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-1">
               {certifications.slice(0, 6).map((certification) => {
                 const href = certification.credentialUrl ?? certification.file;
@@ -290,7 +298,7 @@ function FeaturedProjects() {
           View all projects <Icon name="arrow" className="size-4" />
         </Link>
       </div>
-      <div className="mt-10 grid grid-cols-4 gap-4 xl:grid-cols-2 sm:grid-cols-1">
+      <div className="mt-10 grid grid-cols-4 gap-5 xl:grid-cols-2 sm:grid-cols-1">
         {featuredProjects.map((project) => (
           <ProjectCard key={project.id} project={project} compact />
         ))}

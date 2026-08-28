@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -28,20 +29,30 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-neutral-200 bg-white/95 text-xs font-medium backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/95">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-5">
-        <Link
-          href="/"
-          aria-label="John Lloyd Legaspi, home"
-          className="focus-ring rounded-sm text-lg font-black tracking-[-0.08em]"
-        >
-          JL
+      <div className="site-container flex h-16 items-center justify-between">
+        <Link href="/" className="focus-ring rounded-sm">
+          <Image
+            src="/images/logo/logo-jl-white-bg.png"
+            alt="John Lloyd Legaspi logo"
+            width={48}
+            height={48}
+            className="size-12 object-contain dark:hidden"
+          />
+          <Image
+            src="/images/logo/logo-jl-black-bg.png"
+            alt="John Lloyd Legaspi logo"
+            width={48}
+            height={48}
+            className="hidden size-12 object-contain dark:block"
+          />
         </Link>
         <nav aria-label="Primary navigation" className="lg:hidden">
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-6 xl:gap-5">
             {navigation.map((item) => {
               const active =
                 (item.href === "/" && pathname === "/") ||
-                (item.href === "/#projects" && pathname === "/projects");
+                (item.href === "/#projects" && pathname === "/projects") ||
+                item.href === pathname;
 
               return (
                 <li key={item.href}>
