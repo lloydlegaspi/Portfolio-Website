@@ -87,6 +87,13 @@ Edit only the relevant module in `src/content/`, preserve ISO dates, and run the
 
 TODO: confirm a newer resume/professional snapshot than the repository's current resume before changing education status, graduation timing, employment history, or public contact details.
 
+## Engineering documentation
+
+- [Repository guidance for contributors and coding agents](AGENTS.md)
+- [AI-assisted development workflow](docs/ai-assisted-development.md)
+- [Engineering and production TODOs](docs/TODO.md)
+- [Chat rate-limiting guidance](docs/rate-limiting.md)
+
 ## Attribution
 
 The portfolio retains the existing visual direction and assets. The original design inspiration is credited to CodeBucks; subsequent implementation and content are by John Lloyd Legaspi.
