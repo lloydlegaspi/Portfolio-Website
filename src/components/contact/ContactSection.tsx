@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { profile } from "@/content";
 import { Icon } from "@/components/ui/Icon";
+import { SocialLinks } from "@/components/ui/SocialLinks";
+import { profile } from "@/content";
 
 export function ContactSection() {
   const [status, setStatus] = useState("");
@@ -30,31 +31,45 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="section-shell scroll-mt-24">
-      <div className="grid grid-cols-3 gap-12 md:grid-cols-1">
+      <div className="grid grid-cols-[0.8fr_1.2fr] gap-20 lg:grid-cols-1 lg:gap-12">
         <div>
           <p className="section-kicker">Contact</p>
           <h2 className="section-title">Let&apos;s connect.</h2>
-          <p className="mt-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+          <p className="mt-5 max-w-sm text-sm leading-7 text-neutral-600 dark:text-neutral-300">
             I&apos;m open to collaborations, internships, job offers, and
             exciting opportunities.
           </p>
-          <div className="mt-6 space-y-3 text-sm">
-            <a
-              className="focus-ring flex items-center gap-2 rounded"
-              href={`mailto:${profile.email}`}
-            >
-              <Icon name="email" className="size-5" />
-              {profile.email}
-            </a>
-            <p className="text-gray-600 dark:text-gray-300">{profile.phone}</p>
-            <p className="text-gray-600 dark:text-gray-300">
-              {profile.location}
-            </p>
-          </div>
+          <dl className="mt-8 space-y-4 text-sm">
+            <div>
+              <dt className="sr-only">Email</dt>
+              <dd>
+                <a
+                  className="focus-ring inline-flex items-center gap-3 rounded-sm"
+                  href={`mailto:${profile.email}`}
+                >
+                  <Icon name="email" className="size-4" />
+                  {profile.email}
+                </a>
+              </dd>
+            </div>
+            <div className="flex gap-3">
+              <dt className="font-semibold">T</dt>
+              <dd className="text-neutral-600 dark:text-neutral-300">
+                {profile.phone}
+              </dd>
+            </div>
+            <div className="flex gap-3">
+              <dt className="font-semibold">L</dt>
+              <dd className="text-neutral-600 dark:text-neutral-300">
+                {profile.location}
+              </dd>
+            </div>
+          </dl>
+          <SocialLinks className="mt-8" />
         </div>
         <form
           onSubmit={submit}
-          className="col-span-2 rounded-xl border border-gray-200 bg-white p-7 shadow-sm dark:border-neutral-700 dark:bg-neutral-900"
+          className="rounded-lg border border-neutral-200 bg-white p-7 dark:border-neutral-800 dark:bg-neutral-950 sm:p-5"
           noValidate
         >
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-1">
@@ -69,11 +84,8 @@ export function ContactSection() {
               autoComplete="family-name"
             />
           </div>
-          <label className="mt-5 block text-sm font-semibold" htmlFor="email">
-            Email{" "}
-            <span aria-hidden="true" className="text-red-600">
-              *
-            </span>
+          <label className="mt-5 block text-xs font-semibold" htmlFor="email">
+            Email <RequiredMark />
             <input
               className="form-field"
               id="email"
@@ -83,11 +95,8 @@ export function ContactSection() {
               required
             />
           </label>
-          <label className="mt-5 block text-sm font-semibold" htmlFor="message">
-            Message{" "}
-            <span aria-hidden="true" className="text-red-600">
-              *
-            </span>
+          <label className="mt-5 block text-xs font-semibold" htmlFor="message">
+            Message <RequiredMark />
             <textarea
               className="form-field min-h-36 resize-y"
               id="message"
@@ -97,9 +106,9 @@ export function ContactSection() {
           </label>
           <button
             type="submit"
-            className="focus-ring mt-6 inline-flex items-center gap-2 rounded-md bg-black px-5 py-3 text-sm font-semibold text-white dark:bg-white dark:text-black"
+            className="focus-ring mt-6 inline-flex min-h-11 items-center gap-2 rounded-md bg-black px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
           >
-            <Icon name="send" className="size-5" />
+            <Icon name="send" className="size-4" />
             Prepare email
           </button>
           {status ? (
@@ -113,6 +122,14 @@ export function ContactSection() {
   );
 }
 
+function RequiredMark() {
+  return (
+    <span aria-hidden="true" className="text-neutral-500">
+      *
+    </span>
+  );
+}
+
 function Field({
   label,
   name,
@@ -123,11 +140,8 @@ function Field({
   autoComplete: string;
 }) {
   return (
-    <label className="block text-sm font-semibold" htmlFor={name}>
-      {label}{" "}
-      <span aria-hidden="true" className="text-red-600">
-        *
-      </span>
+    <label className="block text-xs font-semibold" htmlFor={name}>
+      {label} <RequiredMark />
       <input
         className="form-field"
         id={name}

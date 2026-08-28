@@ -15,16 +15,16 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-16">
+    <div className="mx-auto max-w-6xl px-6 py-24 sm:px-5 sm:py-16">
       <p className="section-kicker">Portfolio archive</p>
-      <h1 className="text-4xl font-bold tracking-tight sm:text-3xl">
+      <h1 className="text-5xl font-bold tracking-[-0.045em] sm:text-4xl">
         Projects
       </h1>
-      <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+      <p className="mt-5 max-w-2xl text-sm leading-7 text-neutral-600 dark:text-neutral-300">
         Filter by focus area or year, sort chronologically, and open available
         project images for a closer look.
       </p>
-      <div className="mt-10">
+      <div className="mt-12">
         <ProjectsExplorer projects={projects} />
       </div>
     </div>

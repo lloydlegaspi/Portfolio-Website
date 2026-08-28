@@ -1,13 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { navigation } from "@/content";
 import { Icon } from "@/components/ui/Icon";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { navigation } from "@/content";
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const firstLink = useRef<HTMLAnchorElement>(null);
@@ -26,45 +27,37 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-light/90 text-xs font-medium backdrop-blur dark:border-gray-800 dark:bg-dark/90 dark:text-light">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-neutral-200 bg-white/95 text-xs font-medium backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/95">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-5">
         <Link
           href="/"
           aria-label="John Lloyd Legaspi, home"
-          className="focus-ring rounded-md"
+          className="focus-ring rounded-sm text-lg font-black tracking-[-0.08em]"
         >
-          <Image
-            src="/images/logo/logo-jl-white-bg.png"
-            alt=""
-            width={44}
-            height={44}
-            className="size-11 rounded-md dark:hidden"
-            priority
-          />
-          <Image
-            src="/images/logo/logo-jl-black-bg.png"
-            alt=""
-            width={44}
-            height={44}
-            className="hidden size-11 rounded-md dark:block"
-            priority
-          />
+          JL
         </Link>
         <nav aria-label="Primary navigation" className="lg:hidden">
-          <ul className="flex items-center gap-7">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="focus-ring rounded-sm underline-offset-4 hover:underline"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+          <ul className="flex items-center gap-8">
+            {navigation.map((item) => {
+              const active =
+                (item.href === "/" && pathname === "/") ||
+                (item.href === "/#projects" && pathname === "/projects");
+
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`focus-ring rounded-sm border-b py-2 transition-colors hover:border-current ${active ? "border-current font-semibold" : "border-transparent"}`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <div className="lg:hidden">
             <ThemeToggle />
           </div>
@@ -77,24 +70,24 @@ export function SiteHeader() {
             aria-controls="mobile-navigation"
             onClick={() => setOpen((value) => !value)}
           >
-            <Icon name={open ? "close" : "menu"} className="size-6" />
+            <Icon name={open ? "close" : "menu"} className="size-5" />
           </button>
         </div>
       </div>
       {open ? (
         <div
           id="mobile-navigation"
-          className="hidden border-t border-gray-700 bg-dark px-6 py-6 text-light dark:bg-light dark:text-dark lg:block"
+          className="hidden border-t border-neutral-200 bg-white px-5 py-5 dark:border-neutral-800 dark:bg-neutral-950 lg:block"
         >
           <nav aria-label="Mobile navigation">
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-1">
               {navigation.map((item, index) => (
                 <li key={item.href}>
                   <Link
                     ref={index === 0 ? firstLink : undefined}
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="focus-ring block rounded px-2 py-2 text-base"
+                    className="focus-ring block rounded px-2 py-2.5 text-base"
                   >
                     {item.label}
                   </Link>
@@ -102,8 +95,8 @@ export function SiteHeader() {
               ))}
             </ul>
           </nav>
-          <div className="mt-4 px-2">
-            <ThemeToggle inverse />
+          <div className="mt-4 border-t border-neutral-200 px-2 pt-4 dark:border-neutral-800">
+            <ThemeToggle />
           </div>
         </div>
       ) : null}

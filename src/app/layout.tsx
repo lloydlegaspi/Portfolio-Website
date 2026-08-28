@@ -55,8 +55,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f5f5" },
-    { media: "(prefers-color-scheme: dark)", color: "#1b1b1b" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
 };
 
@@ -64,15 +64,15 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body
-        className={`${montserrat.variable} min-h-screen bg-light font-mont text-dark antialiased dark:bg-dark dark:text-light`}
+        className={`${montserrat.variable} min-h-screen bg-white font-mont text-neutral-950 antialiased dark:bg-neutral-950 dark:text-neutral-100`}
       >
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
         <SiteHeader />
-        <main id="main-content" className="pt-[69px]">
+        <main id="main-content" className="pt-[65px]">
           {children}
         </main>
         <SiteFooter />

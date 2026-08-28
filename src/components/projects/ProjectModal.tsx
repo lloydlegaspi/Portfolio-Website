@@ -86,7 +86,6 @@ export function ProjectModal({
             fill
             sizes="100vw"
             className="object-contain"
-            priority
           />
         </div>
       </div>

@@ -5,7 +5,7 @@ import { Icon } from "./Icon";
 
 type Theme = "dark" | "light";
 
-export function ThemeToggle({ inverse = false }: { inverse?: boolean }) {
+export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
@@ -33,10 +33,10 @@ export function ThemeToggle({ inverse = false }: { inverse?: boolean }) {
     <button
       type="button"
       onClick={toggleTheme}
-      className={`focus-ring inline-flex size-9 items-center justify-center rounded-full ${inverse ? "bg-white text-black" : "bg-black text-white dark:bg-white dark:text-black"}`}
+      className="focus-ring inline-flex size-10 items-center justify-center rounded-md text-black transition-colors hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-800"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
     >
-      <Icon name={theme === "dark" ? "sun" : "moon"} className="size-5" />
+      <Icon name={theme === "dark" ? "sun" : "moon"} className="size-[18px]" />
     </button>
   );
 }

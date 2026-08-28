@@ -94,4 +94,4 @@ Edit only the relevant module in `src/content/`, preserve ISO dates, and run the
 
 ## Attribution
 
-The portfolio retains the existing visual direction and assets. The original design inspiration is credited to CodeBucks; subsequent implementation and content are by John Lloyd Legaspi.
+The portfolio uses a minimalist black-and-white visual direction. Earlier design inspiration was credited to CodeBucks; the current implementation and content are by John Lloyd Legaspi.

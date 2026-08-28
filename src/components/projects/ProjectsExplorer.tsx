@@ -50,7 +50,7 @@ export function ProjectsExplorer({
 
   return (
     <>
-      <div className="mb-8 rounded-xl border border-gray-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900">
+      <div className="mb-10 rounded-lg border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
         <div
           className="flex flex-wrap items-center gap-2"
           aria-label="Project filters"
@@ -61,7 +61,7 @@ export function ProjectsExplorer({
               type="button"
               aria-pressed={tags.includes(tag)}
               onClick={() => toggleTag(tag)}
-              className={`focus-ring rounded-md border px-3 py-1.5 text-xs ${tags.includes(tag) ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black" : "border-gray-300 dark:border-gray-700"}`}
+              className={`focus-ring min-h-9 rounded-md border px-3 py-1.5 text-xs transition-colors ${tags.includes(tag) ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black" : "border-neutral-300 hover:border-black dark:border-neutral-700 dark:hover:border-white"}`}
             >
               {tag}
             </button>
@@ -75,7 +75,7 @@ export function ProjectsExplorer({
             id="project-year"
             value={year}
             onChange={(event) => setYear(event.target.value)}
-            className="focus-ring rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm dark:border-gray-700"
+            className="focus-ring min-h-10 rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm dark:border-neutral-700 dark:bg-neutral-950"
           >
             <option value="">All years</option>
             {years.map((value) => (
@@ -89,7 +89,7 @@ export function ProjectsExplorer({
             onClick={() =>
               setDirection((value) => (value === "desc" ? "asc" : "desc"))
             }
-            className="focus-ring rounded-md border border-gray-300 px-3 py-2 text-sm dark:border-gray-700"
+            className="focus-ring min-h-10 rounded-md border border-neutral-300 px-3 py-2 text-sm dark:border-neutral-700"
             aria-label={`Sort projects ${direction === "desc" ? "oldest first" : "newest first"}`}
           >
             Date: {direction === "desc" ? "Newest" : "Oldest"}
@@ -109,7 +109,7 @@ export function ProjectsExplorer({
         </div>
       </div>
       {visible.length ? (
-        <div className="grid grid-cols-3 gap-7 lg:grid-cols-2 sm:grid-cols-1">
+        <div className="grid grid-cols-3 gap-5 lg:grid-cols-2 sm:grid-cols-1">
           {visible.map((project) => (
             <ProjectCard
               key={project.id}
@@ -123,7 +123,7 @@ export function ProjectsExplorer({
       ) : (
         <div
           role="status"
-          className="rounded-xl border border-dashed border-gray-400 px-6 py-16 text-center"
+          className="rounded-lg border border-dashed border-neutral-400 px-6 py-16 text-center"
         >
           <h2 className="text-xl font-semibold">
             No projects match these filters
