@@ -21,8 +21,8 @@ export default function ProjectsPage() {
         Projects
       </h1>
       <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-        Filter by focus area or year, sort chronologically, and open any project
-        image for a closer look.
+        Filter by focus area or year, sort chronologically, and open available
+        project images for a closer look.
       </p>
       <div className="mt-10">
         <ProjectsExplorer projects={projects} />

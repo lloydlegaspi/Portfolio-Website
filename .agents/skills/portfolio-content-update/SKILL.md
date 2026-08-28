@@ -34,4 +34,4 @@ A minimal canonical content update with unchanged facts outside scope, valid typ
 
 If sources conflict or a public claim cannot be verified, stop that factual change, explain the conflict, and ask the user to resolve it. Do not fabricate, average, extrapolate, or rewrite the claim as if confirmed.
 
-See [AI and Professional Content](../../../docs/ai-assisted-development.md#ai-and-professional-content) for the repository policy.
+See [`AGENTS.md`](../../../AGENTS.md) for the repository's professional-content policy.

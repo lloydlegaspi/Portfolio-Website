@@ -36,4 +36,4 @@ A focused feature change consistent with the existing architecture, with appropr
 
 Do not guess when requirements conflict with verified content, privacy, security, or architecture. Preserve working behavior, document the evidence and tradeoff, and request a decision when it materially changes scope. Never mask a failing check or weaken a test to finish.
 
-See the [AI-assisted development policy](../../../docs/ai-assisted-development.md) for the shared evidence-first workflow.
+See [`AGENTS.md`](../../../AGENTS.md) for the shared evidence-first workflow.

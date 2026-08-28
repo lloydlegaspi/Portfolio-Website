@@ -12,6 +12,10 @@ describe("route smoke tests", () => {
     expect(
       screen.getByRole("heading", { name: /recent work, brought forward/i }),
     ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /download cv/i })).toHaveAttribute(
+      "href",
+      "/Legaspi_John_Lloyd_Resume.pdf",
+    );
   });
   it("renders the projects page", () => {
     render(<ProjectsPage />);

@@ -2,6 +2,8 @@
 
 A production-oriented personal portfolio for John Lloyd S. Legaspi. It presents selected software, machine-learning, and data work; professional experience and education; verified credentials; direct contact options; and an optional Gemini-powered assistant grounded in the same canonical content shown by the interface.
 
+[View the deployed portfolio](https://lloyd-legaspi-portfolio.vercel.app/)
+
 ![Portfolio website](public/images/projects/portfolio.png)
 
 ## Architecture
@@ -85,13 +87,9 @@ Serverless rate limiting must be distributed. See [docs/rate-limiting.md](docs/r
 
 Edit only the relevant module in `src/content/`, preserve ISO dates, and run the validation tests. Do not guess professional facts.
 
-TODO: confirm a newer resume/professional snapshot than the repository's current resume before changing education status, graduation timing, employment history, or public contact details.
-
 ## Engineering documentation
 
 - [Repository guidance for contributors and coding agents](AGENTS.md)
-- [AI-assisted development workflow](docs/ai-assisted-development.md)
-- [Engineering and production TODOs](docs/TODO.md)
 - [Chat rate-limiting guidance](docs/rate-limiting.md)
 
 ## Attribution

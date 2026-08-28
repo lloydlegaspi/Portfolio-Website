@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: `${profile.shortName} | Portfolio`,
     template: `%s | ${profile.shortName}`,
   },
-  description: `${profile.shortName}'s portfolio featuring data science, machine learning, and software development work.`,
+  description: `${profile.shortName}'s portfolio featuring data engineering, analytics, and software development work.`,
   alternates: { canonical: "/" },
   openGraph: {
     type: "profile",

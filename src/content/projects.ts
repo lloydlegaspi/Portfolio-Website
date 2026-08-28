@@ -2,6 +2,30 @@ import type { Project } from "@/types/portfolio";
 
 export const projects: readonly Project[] = [
   {
+    id: "movie-analytics-pipeline",
+    title:
+      "Movie Analytics End-to-End Data Pipeline & Partner Screening Dashboard",
+    date: "2026-08-01",
+    description:
+      "A Kaggle and TMDB workflow for 90K+ movies, 44K+ companies, and 114K+ movie-company relationships, orchestrated through nine Airflow tasks and a 22-model warehouse with 141 tests; its Power BI screening narrowed 44,940 companies by 83.6% to 7,388 candidates.",
+    tools: ["PySpark", "PostgreSQL", "dbt", "Apache Airflow", "Power BI"],
+    tags: ["Data Engineering", "Data Analytics", "Dashboards"],
+    featured: true,
+    links: {},
+  },
+  {
+    id: "olist-ecommerce-pipeline",
+    title:
+      "Olist Ecommerce End-to-End Data Pipeline & Regional Marketplace Analytics",
+    date: "2026-07-01",
+    description:
+      "A safeguarded Python and PostgreSQL pipeline for 1.55M rows from nine sources, with schema validation, transactional loading, audit logs, and rollback controls; its 17-task Airflow DAG includes nine dynamically mapped loads, while a 24-model dbt warehouse and 311 tests support regional Power BI analytics.",
+    tools: ["Python", "PostgreSQL", "dbt", "Apache Airflow", "Power BI"],
+    tags: ["Data Engineering", "Data Analytics", "Dashboards"],
+    featured: true,
+    links: {},
+  },
+  {
     id: "tanggol",
     title: "Tanggol",
     date: "2026-05-01",
@@ -12,7 +36,6 @@ export const projects: readonly Project[] = [
     role: "Team Lead / Full Stack Developer",
     tools: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "PWA"],
     tags: ["AI/ML", "Web Development"],
-    featured: true,
     links: {
       live: "https://team67-tanggol.vercel.app/",
       github: "https://github.com/chrlsdrei/team67-tanggol",
@@ -31,7 +54,6 @@ export const projects: readonly Project[] = [
     role: "Team Lead / Full Stack Developer",
     tools: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
     tags: ["AI/ML", "Web Development"],
-    featured: true,
     links: {
       live: "https://tala-project-start.vercel.app/",
       github: "https://github.com/caramel-123/TALA-project",
@@ -54,27 +76,20 @@ export const projects: readonly Project[] = [
       "Tailwind CSS",
     ],
     tags: ["AI/ML", "Web Development"],
-    featured: true,
     links: { github: "https://github.com/lloydlegaspi/recall" },
   },
   {
     id: "cyclistic-bike-share",
     title: "Cyclistic Bike Share Analysis",
-    date: "2026-04-01",
+    date: "2026-05-01",
     image: "/images/projects/Cyclistic.png",
     description:
-      "An end-to-end analytics case study comparing casual riders and annual members and recommending conversion-focused marketing strategies.",
+      "An analysis of 5.44M bike-share trips using Python, pandas, and Power BI that identified 337K+ commuter-like casual trips, representing 17.5% of casual usage.",
     type: "individual",
     role: "Data Analyst",
-    tools: [
-      "Python",
-      "Pandas",
-      "NumPy",
-      "Jupyter Notebook",
-      "Matplotlib",
-      "Seaborn",
-    ],
+    tools: ["Python", "pandas", "Power BI"],
     tags: ["Data Analytics", "Dashboards"],
+    featured: true,
     links: { github: "https://github.com/lloydlegaspi/Cyclistic_Bike_Share" },
   },
   {
@@ -93,13 +108,14 @@ export const projects: readonly Project[] = [
   {
     id: "snakesight",
     title: "SnakeSight",
-    date: "2026-01-01",
+    date: "2026-03-01",
+    displayDate: "March 2025 – March 2026",
     image: "/images/projects/SnakeSight.png",
     description:
-      "An AI-powered Philippine snake identification platform supporting high-pressure species-identification and antivenom-routing workflows.",
+      "A thesis web app using AttenDenseNet—DenseNet with CBAM—to classify 14 Philippine snake species from 1,400 labeled images at 89% accuracy, seven percentage points above baseline.",
     type: "team",
     role: "Thesis Lead / Model Developer",
-    tools: ["Next.js", "FastAPI", "TensorFlow"],
+    tools: ["TensorFlow", "DenseNet", "CBAM", "Next.js", "FastAPI", "Azure"],
     tags: ["AI/ML", "Web Development"],
     featured: true,
     links: {

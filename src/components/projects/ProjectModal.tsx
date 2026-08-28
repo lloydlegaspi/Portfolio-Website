@@ -49,6 +49,8 @@ export function ProjectModal({
     };
   }, [onClose, returnFocusTo]);
 
+  if (!project.image) return null;
+
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 p-4"

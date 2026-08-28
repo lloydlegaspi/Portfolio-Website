@@ -21,7 +21,12 @@ export function StructuredData() {
       "@type": "CollegeOrUniversity",
       name: "Polytechnic University of the Philippines",
     },
-    knowsAbout: ["Data Science", "Machine Learning", "Software Development"],
+    knowsAbout: [
+      "Data Engineering",
+      "Data Analytics",
+      "Software Development",
+      "Machine Learning",
+    ],
     subjectOf: projects
       .filter((project) => project.featured)
       .map((project) => ({

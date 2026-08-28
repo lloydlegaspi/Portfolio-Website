@@ -38,8 +38,8 @@ export interface Experience {
   category: "Internship" | "Volunteering";
   range: DateRange;
   displayDate: string;
-  location: string;
-  logo: string;
+  location?: string;
+  logo?: string;
   highlights: readonly string[];
   skills: readonly string[];
 }
@@ -60,8 +60,8 @@ export interface Certification {
   id: string;
   title: string;
   issuer: string;
-  issued: IsoDate;
-  file: string;
+  issued?: IsoDate;
+  file?: string;
   credentialUrl?: string;
   credentialId?: string;
 }
@@ -77,9 +77,10 @@ export interface Project {
   id: string;
   title: string;
   date: IsoDate;
-  image: string;
+  displayDate?: string;
+  image?: string;
   description: string;
-  type: "individual" | "team";
+  type?: "individual" | "team";
   role?: string;
   tools: readonly string[];
   tags: readonly string[];

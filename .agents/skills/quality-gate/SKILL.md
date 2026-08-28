@@ -45,4 +45,4 @@ An evidence-based readiness report, plus in-scope fixes when the user requested 
 
 Fail clearly when a check fails. Do not describe the gate as passing if any required check failed or was skipped. Report environmental blockers and the next reproducible action; request user input only when repository evidence cannot resolve the issue.
 
-See [Quality gates](../../../README.md#quality-gates) and [AI and Testing](../../../docs/ai-assisted-development.md#ai-and-testing).
+See [Quality gates](../../../README.md#quality-gates) and the testing rules in [`AGENTS.md`](../../../AGENTS.md).

@@ -139,13 +139,15 @@ function ExperienceSection() {
             className="rounded-xl border border-gray-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-900"
           >
             <div className="flex gap-4">
-              <Image
-                src={experience.logo}
-                alt={`${experience.company} logo`}
-                width={64}
-                height={64}
-                className="size-16 object-contain"
-              />
+              {experience.logo ? (
+                <Image
+                  src={experience.logo}
+                  alt={`${experience.company} logo`}
+                  width={64}
+                  height={64}
+                  className="size-16 object-contain"
+                />
+              ) : null}
               <div>
                 <span className="rounded-full bg-emerald-100 px-2 py-1 text-[11px] text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
                   {experience.category}
@@ -155,15 +157,18 @@ function ExperienceSection() {
                 </h3>
                 <p className="text-sm">{experience.company}</p>
                 <p className="mt-1 text-xs text-gray-500">
-                  {experience.displayDate} · {experience.location}
+                  {experience.displayDate}
+                  {experience.location ? ` · ${experience.location}` : ""}
                 </p>
               </div>
             </div>
-            <ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-              {experience.highlights.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            {experience.highlights.length ? (
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                {experience.highlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            ) : null}
             <div className="mt-4 flex flex-wrap gap-2">
               {experience.skills.map((skill) => (
                 <span
@@ -221,28 +226,45 @@ function EducationSection() {
       </div>
       <h3 className="mt-12 text-2xl font-semibold">Selected certifications</h3>
       <div className="mt-5 grid grid-cols-3 gap-4 lg:grid-cols-2 sm:grid-cols-1">
-        {certifications.slice(0, 6).map((certification) => (
-          <a
-            key={certification.id}
-            href={certification.credentialUrl ?? certification.file}
-            target="_blank"
-            rel="noreferrer"
-            className="focus-ring rounded-xl border border-gray-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900"
-          >
-            <time
-              className="text-xs text-gray-500"
-              dateTime={certification.issued}
+        {certifications.slice(0, 6).map((certification) => {
+          const href = certification.credentialUrl ?? certification.file;
+          const content = (
+            <>
+              {certification.issued ? (
+                <time
+                  className="text-xs text-gray-500"
+                  dateTime={certification.issued}
+                >
+                  {certification.issued.slice(0, 4)}
+                </time>
+              ) : null}
+              <h4 className="mt-2 text-sm font-semibold">
+                {certification.title}
+              </h4>
+              <p className="mt-1 text-xs text-gray-600 dark:text-gray-300">
+                {certification.issuer}
+              </p>
+            </>
+          );
+          const className =
+            "rounded-xl border border-gray-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900";
+
+          return href ? (
+            <a
+              key={certification.id}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className={`focus-ring ${className}`}
             >
-              {certification.issued.slice(0, 4)}
-            </time>
-            <h4 className="mt-2 text-sm font-semibold">
-              {certification.title}
-            </h4>
-            <p className="mt-1 text-xs text-gray-600 dark:text-gray-300">
-              {certification.issuer}
-            </p>
-          </a>
-        ))}
+              {content}
+            </a>
+          ) : (
+            <article key={certification.id} className={className}>
+              {content}
+            </article>
+          );
+        })}
       </div>
     </section>
   );

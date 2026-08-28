@@ -26,8 +26,13 @@ describe("project collection utilities", () => {
   it("sorts newest and oldest without mutating the source", () => {
     const source = projects.slice(0, 3);
     const original = [...source];
-    expect(sortProjects(source, "desc")[0]?.date).toBe("2026-05-01");
-    expect(sortProjects(source, "asc")[0]?.date).toBe("2026-04-01");
+    const dates = source.map((project) => project.date);
+    expect(sortProjects(source, "desc").map((project) => project.date)).toEqual(
+      [...dates].sort().reverse(),
+    );
+    expect(sortProjects(source, "asc").map((project) => project.date)).toEqual(
+      [...dates].sort(),
+    );
     expect(source).toEqual(original);
   });
 });

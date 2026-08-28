@@ -3,19 +3,20 @@ import type { NavigationItem, Profile } from "@/types/portfolio";
 export const profile = {
   name: "John Lloyd S. Legaspi",
   shortName: "John Lloyd Legaspi",
-  headline: "Data science, machine learning, and software development",
+  headline: "Data Engineering · Analytics · Software Development",
   introduction:
-    "Always eager to learn, build, and improve with data, code, and creativity.",
+    "Computer Science graduate candidate with hands-on experience in data engineering, analytics, and software development.",
   about: [
-    "I'm a Computer Science student at the Polytechnic University of the Philippines and a DOST Scholar. I enjoy solving problems with a logical and strategic mindset and planning work early.",
-    "I continually work to become a better leader through every project and collaboration. Beyond academics and coding, I value walking and running as time to reset and recharge.",
+    "I'm a Computer Science graduate candidate at the Polytechnic University of the Philippines and a DOST Scholar, with practical experience building data pipelines, analytics solutions, and software products.",
+    "My recent work spans dimensional data warehouses, workflow orchestration, decision-support dashboards, backend services, and machine-learning applications.",
   ],
   email: "jlloyd.legaspi@gmail.com",
   phone: "+63 945 581 6978",
   location: "Metro Manila, Philippines",
   resumePath: "/Legaspi_John_Lloyd_Resume.pdf",
   siteUrl:
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://lloydlegaspi.vercel.app",
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    "https://lloyd-legaspi-portfolio.vercel.app",
   socialLinks: [
     {
       label: "GitHub",

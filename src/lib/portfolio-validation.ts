@@ -9,9 +9,10 @@ export const projectSchema = z.object({
   id: z.string().min(1),
   title: z.string().min(1),
   date: isoDate,
-  image: z.string().startsWith("/"),
+  displayDate: z.string().min(1).optional(),
+  image: z.string().startsWith("/").optional(),
   description: z.string().min(1),
-  type: z.enum(["individual", "team"]),
+  type: z.enum(["individual", "team"]).optional(),
   role: z.string().optional(),
   tools: z.array(z.string().min(1)),
   tags: z.array(z.string().min(1)),
@@ -54,7 +55,7 @@ export const portfolioDataSchema = z.object({
     z.object({
       id: z.string().min(1),
       title: z.string().min(1),
-      issued: isoDate,
+      issued: isoDate.optional(),
     }),
   ),
 });

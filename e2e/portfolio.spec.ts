@@ -5,6 +5,16 @@ test("critical navigation and project modal flow", async ({ page }) => {
   await expect(
     page.getByRole("heading", { level: 1, name: "John Lloyd Legaspi" }),
   ).toBeVisible();
+  const resume = page.getByRole("link", { name: "Download CV" });
+  await expect(resume).toHaveAttribute(
+    "href",
+    "/Legaspi_John_Lloyd_Resume.pdf",
+  );
+  const resumeResponse = await page.request.get(
+    "/Legaspi_John_Lloyd_Resume.pdf",
+  );
+  expect(resumeResponse.ok()).toBe(true);
+  expect(resumeResponse.headers()["content-type"]).toContain("application/pdf");
   await page.getByRole("link", { name: "View projects" }).click();
   await expect(page).toHaveURL(/\/projects$/);
   const trigger = page.getByRole("button", {

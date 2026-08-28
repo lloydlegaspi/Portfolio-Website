@@ -2,30 +2,24 @@ import type { Certification } from "@/types/portfolio";
 
 export const certifications: readonly Certification[] = [
   {
-    id: "csc-professional",
-    title: "Civil Service Professional Eligibility",
-    issuer: "Civil Service Commission – Philippines",
-    issued: "2024-08-01",
-    file: "/images/certs/csc-professional-eligibility.png",
+    id: "microsoft-azure-fundamentals",
+    title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+    issuer: "Microsoft",
+  },
+  {
+    id: "microsoft-azure-ai-fundamentals",
+    title: "Microsoft Certified: Azure AI Fundamentals (AI-900)",
+    issuer: "Microsoft",
   },
   {
     id: "google-advanced-analytics",
-    title: "Google Advanced Data Analytics Certificate",
+    title: "Google Advanced Data Analytics",
     issuer: "Google Career Certificates (Coursera)",
     issued: "2024-08-01",
     file: "/images/certs/google-advanced-data-analytics.pdf",
     credentialUrl:
       "https://www.coursera.org/account/accomplishments/specialization/FCNW5ITLTRD3",
     credentialId: "FCNW5ITLTRD3",
-  },
-  {
-    id: "datacamp-data-scientist",
-    title: "Data Scientist Associate",
-    issuer: "DataCamp",
-    issued: "2024-09-01",
-    file: "/images/certs/datacamp-data-scientist-associate.pdf",
-    credentialUrl: "https://www.datacamp.com/certificate/DSA0019865803657",
-    credentialId: "DSA0019865803657",
   },
   {
     id: "google-it-automation",
@@ -39,13 +33,46 @@ export const certifications: readonly Certification[] = [
   },
   {
     id: "google-data-analytics",
-    title: "Google Data Analytics Professional Certificate",
+    title: "Google Data Analytics Professional",
     issuer: "Google Career Certificates (Coursera)",
     issued: "2022-11-01",
     file: "/images/certs/google-data-analytics.pdf",
     credentialUrl:
       "https://www.coursera.org/account/accomplishments/professional-cert/KYQCGXVYJJTJ",
     credentialId: "KYQCGXVYJJTJ",
+  },
+  {
+    id: "datacamp-data-engineer",
+    title: "Data Engineer Associate",
+    issuer: "DataCamp",
+  },
+  {
+    id: "datacamp-data-scientist",
+    title: "Data Scientist Associate",
+    issuer: "DataCamp",
+    issued: "2024-09-01",
+    file: "/images/certs/datacamp-data-scientist-associate.pdf",
+    credentialUrl: "https://www.datacamp.com/certificate/DSA0019865803657",
+    credentialId: "DSA0019865803657",
+  },
+  {
+    id: "datacamp-python-data",
+    title: "Python Data Associate",
+    issuer: "DataCamp",
+    file: "/images/certs/datacamp-python-data-associate.pdf",
+  },
+  {
+    id: "datacamp-data-analyst",
+    title: "Data Analyst Associate",
+    issuer: "DataCamp",
+    file: "/images/certs/datacamp-data-analyst-associate.pdf",
+  },
+  {
+    id: "csc-professional",
+    title: "Civil Service Professional Eligibility",
+    issuer: "Civil Service Commission – Philippines",
+    issued: "2024-08-01",
+    file: "/images/certs/csc-professional-eligibility.png",
   },
   {
     id: "sparta-computing",

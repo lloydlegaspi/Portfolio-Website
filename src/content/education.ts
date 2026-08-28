@@ -4,17 +4,15 @@ export const education = [
   {
     id: "pup-bscs",
     degree: "Bachelor of Science in Computer Science",
-    institution: "Polytechnic University of the Philippines",
-    range: { start: "2022-01-01", current: true },
-    displayDate: "2022 – Present",
+    institution: "Polytechnic University of the Philippines – Manila",
+    range: { start: "2022-01-01", end: "2026-09-30", current: true },
+    displayDate: "Expected September 2026",
     location: "Sta. Mesa, Manila",
     logo: "/images/education-logos/pup-logo.png",
-    distinction: "Cumulative GPA: 1.14",
+    distinction: "Cumulative GWA: 1.12 (1.00 = highest)",
     highlights: [
-      "DOST Junior Level Science Scholarship Awardee",
-      "Consistent President's Lister (2022–Present)",
-      "Data Co-Lead, Google Developer Student Clubs – PUP Main (2023–2024)",
-      "Member, PUP The Programmers' Guild (2023–Present)",
+      "DOST Scholar",
+      "Relevant coursework: Database Management, Artificial Intelligence, Machine Learning, Software Engineering, and Data Structures",
     ],
   },
   {

@@ -44,7 +44,7 @@ Verify versions in `package.json`, `.nvmrc`, and the lockfile before making vers
 - Environment configuration comes from environment variables documented in `.env.example` and `README.md`.
 - `package.json` is authoritative for commands and supported runtime constraints.
 - Tests and `.github/workflows/ci.yaml` define the automated quality expectations.
-- Documentation must describe implemented behavior. Put unresolved work in `docs/TODO.md`, not in claims about current behavior.
+- Documentation must describe implemented behavior. Keep unresolved internal work out of claims about current behavior.
 
 ## Development Principles
 
@@ -74,8 +74,6 @@ AI agents must:
 8. Run quality gates proportionate to the change.
 9. Inspect `git diff`, `git diff --check`, and `git status` before finishing.
 10. Report commands actually run, failures, skipped checks, unresolved risks, and TODOs.
-
-See [AI-Assisted Development](docs/ai-assisted-development.md) for the detailed workflow.
 
 ## Professional Content Safety
 
@@ -145,6 +143,4 @@ Repository workflows live in `.agents/skills/`:
 ## Documentation Index
 
 - [README](README.md) — product, setup, architecture, deployment, and commands.
-- [AI-Assisted Development](docs/ai-assisted-development.md) — agent workflow and review policy.
-- [TODO](docs/TODO.md) — prioritized unresolved engineering and production decisions.
 - [Chat rate limiting](docs/rate-limiting.md) — production abuse-control considerations.

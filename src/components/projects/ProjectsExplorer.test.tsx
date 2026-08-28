@@ -7,7 +7,8 @@ import { ProjectsExplorer } from "./ProjectsExplorer";
 describe("ProjectsExplorer", () => {
   it("opens an accessible image dialog, closes with Escape, and restores focus", async () => {
     const user = userEvent.setup();
-    render(<ProjectsExplorer projects={projects.slice(0, 2)} />);
+    const imageProjects = projects.filter((project) => project.image);
+    render(<ProjectsExplorer projects={imageProjects.slice(0, 2)} />);
     const trigger = screen.getByRole("button", {
       name: /enlarge image for tanggol/i,
     });

@@ -39,16 +39,20 @@ export function ProjectCard({ project, onImageClick }: ProjectCardProps) {
   return (
     <article className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-neutral-700 dark:bg-neutral-900">
       <div className="flex items-start justify-between gap-3 text-xs text-gray-500 dark:text-gray-400">
-        <time dateTime={project.date}>{formatProjectDate(project.date)}</time>
-        <span>
-          {project.type === "team"
-            ? project.role
-              ? `Team · ${project.role}`
-              : "Team"
-            : "Individual"}
-        </span>
+        <time dateTime={project.date}>
+          {project.displayDate ?? formatProjectDate(project.date)}
+        </time>
+        {project.type ? (
+          <span>
+            {project.type === "team"
+              ? project.role
+                ? `Team · ${project.role}`
+                : "Team"
+              : "Individual"}
+          </span>
+        ) : null}
       </div>
-      {onImageClick ? (
+      {project.image && onImageClick ? (
         <button
           type="button"
           className="focus-ring relative mt-2 h-44 overflow-hidden rounded-md"
@@ -63,7 +67,7 @@ export function ProjectCard({ project, onImageClick }: ProjectCardProps) {
             className="object-cover"
           />
         </button>
-      ) : (
+      ) : project.image ? (
         <div className="relative mt-2 h-44 overflow-hidden rounded-md">
           <Image
             src={project.image}
@@ -72,6 +76,12 @@ export function ProjectCard({ project, onImageClick }: ProjectCardProps) {
             sizes="(max-width: 640px) 100vw, 33vw"
             className="object-cover"
           />
+        </div>
+      ) : (
+        <div className="mt-2 flex h-44 items-center justify-center rounded-md bg-gradient-to-br from-indigo-100 via-slate-100 to-emerald-100 px-6 text-center dark:from-indigo-950 dark:via-neutral-900 dark:to-emerald-950">
+          <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">
+            {project.tags.join(" · ")}
+          </span>
         </div>
       )}
       <h3 className="mt-3 text-lg font-semibold">{project.title}</h3>
