@@ -8,6 +8,9 @@
 
 # testing
 /coverage
+/playwright-report
+/test-results
+*.tsbuildinfo
 
 # next.js
 /.next/
@@ -33,11 +36,7 @@ yarn-error.log*
 .vercel
 *.zip
 *.gz
-*.yml
-*.mjs
-*.cjs
 .pnp.cjs
 
-# data
+# generated and local data
 /data
-/src/data

@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: #1b1b1b;
+    color: #fff;
+  }
+  .dark ::selection {
+    background: #fff;
+    color: #1b1b1b;
+  }
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-light dark:focus-visible:ring-indigo-300 dark:focus-visible:ring-offset-dark;
+  }
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-4 py-20;
+  }
+  .section-kicker {
+    @apply mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400;
+  }
+  .section-title {
+    @apply text-3xl font-bold tracking-tight md:text-3xl sm:text-2xl;
+  }
+  .form-field {
+    @apply focus-ring mt-2 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2.5 text-sm font-normal dark:border-gray-600;
+  }
+  .skip-link {
+    @apply fixed left-4 top-4 z-[200] -translate-y-24 rounded-md bg-black px-4 py-2 text-sm font-semibold text-white transition-transform focus:translate-y-0 dark:bg-white dark:text-black;
+  }
+}
+
+.particle-field {
+  background-image: radial-gradient(
+    circle,
+    rgba(245, 211, 147, 0.6) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+  opacity: 0.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
