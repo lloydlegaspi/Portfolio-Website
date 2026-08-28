@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { formatProjectDate } from "@/lib/projects";
 import type { Project } from "@/types/portfolio";
@@ -121,6 +122,15 @@ export function ProjectCard({
         >
           {project.description}
         </p>
+        {project.links.caseStudy ? (
+          <Link
+            href={project.links.caseStudy}
+            aria-label={`View ${project.title} case study`}
+            className="focus-ring mt-4 w-fit rounded-sm text-xs font-semibold underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-neutral-600 dark:decoration-neutral-700 dark:hover:text-neutral-300"
+          >
+            View case study →
+          </Link>
+        ) : null}
         <div className="mt-4 flex flex-wrap gap-1.5">
           {project.tools.slice(0, compact ? 3 : 4).map((tool) => (
             <span

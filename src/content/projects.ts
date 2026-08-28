@@ -8,10 +8,11 @@ export const projects: readonly Project[] = [
     date: "2026-08-01",
     description:
       "A Kaggle and TMDB workflow for 90K+ movies, 44K+ companies, and 114K+ movie-company relationships, orchestrated through nine Airflow tasks and a 22-model warehouse with 141 tests; its Power BI screening narrowed 44,940 companies by 83.6% to 7,388 candidates.",
+    image: "/images/projects/Movie/03_overview.png",
     tools: ["PySpark", "PostgreSQL", "dbt", "Apache Airflow", "Power BI"],
     tags: ["Data Engineering", "Data Analytics", "Dashboards"],
     featured: true,
-    links: {},
+    links: { caseStudy: "/projects/movie-analytics-pipeline" },
   },
   {
     id: "olist-ecommerce-pipeline",
@@ -20,10 +21,11 @@ export const projects: readonly Project[] = [
     date: "2026-07-01",
     description:
       "A safeguarded Python and PostgreSQL pipeline for 1.55M rows from nine sources, with schema validation, transactional loading, audit logs, and rollback controls; its 17-task Airflow DAG includes nine dynamically mapped loads, while a 24-model dbt warehouse and 311 tests support regional Power BI analytics.",
+    image: "/images/projects/Olist/page1-overview.png",
     tools: ["Python", "PostgreSQL", "dbt", "Apache Airflow", "Power BI"],
     tags: ["Data Engineering", "Data Analytics", "Dashboards"],
     featured: true,
-    links: {},
+    links: { caseStudy: "/projects/olist-ecommerce-pipeline" },
   },
   {
     id: "tanggol",

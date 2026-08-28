@@ -71,6 +71,7 @@ export interface ProjectLinks {
   github?: string;
   documentation?: string;
   video?: string;
+  caseStudy?: string;
 }
 
 export interface Project {
