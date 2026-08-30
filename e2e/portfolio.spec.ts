@@ -15,14 +15,15 @@ test("critical navigation and project modal flow", async ({ page }) => {
   );
   expect(resumeResponse.ok()).toBe(true);
   expect(resumeResponse.headers()["content-type"]).toContain("application/pdf");
-  await page.getByRole("link", { name: "View all certifications" }).click();
-  await expect(page).toHaveURL(/\/certifications$/);
-  await expect(
-    page.getByRole("heading", {
-      level: 1,
-      name: "Credentials and continued learning.",
-    }),
-  ).toBeVisible();
+  const certificationsLink = page.getByRole("link", {
+    name: "View all certifications",
+  });
+  await expect(certificationsLink).toHaveAttribute(
+    "href",
+    "https://www.linkedin.com/in/john-lloyd-legaspi/details/certifications/",
+  );
+  await expect(certificationsLink).toHaveAttribute("target", "_blank");
+  await expect(certificationsLink).toHaveAttribute("rel", "noreferrer");
   await page.goto("/");
   await page.getByRole("link", { name: "View projects" }).click();
   await expect(page).toHaveURL(/\/projects$/);
