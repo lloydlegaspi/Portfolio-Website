@@ -3,6 +3,7 @@ export interface CaseStudyFigureData {
   width: number;
   height: number;
   alt: string;
+  title?: string;
   caption: string;
 }
 

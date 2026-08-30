@@ -1,5 +1,11 @@
 import type { Experience } from "@/types/portfolio";
 
+export const experienceOverview = {
+  heading: "Working across data, analytics, and software.",
+  introduction:
+    "Hands-on experience building data pipelines, backend systems, analytics products, automation workflows, and applied machine-learning solutions.",
+} as const;
+
 export const experiences: readonly Experience[] = [
   {
     id: "stratpoint-technologies",
@@ -7,7 +13,7 @@ export const experiences: readonly Experience[] = [
     company: "Stratpoint Technologies",
     category: "Internship",
     range: { start: "2026-06-01", end: "2026-08-31" },
-    displayDate: "June – August 2026",
+    displayDate: "Jun–Aug 2026",
     highlights: [
       "Built end-to-end batch pipelines for ecommerce and movie analytics, working with datasets from 90K+ movie records to 1.55M source rows.",
       "Designed dimensional warehouse layers across staging, intermediate, and marts.",
@@ -30,7 +36,7 @@ export const experiences: readonly Experience[] = [
       "Department of Science and Technology – Science Education Institute",
     category: "Internship",
     range: { start: "2026-01-01", end: "2026-03-31" },
-    displayDate: "January – March 2026",
+    displayDate: "Jan–Mar 2026",
     highlights: [
       "Developed backend business logic, REST APIs, and database integrations for microservices.",
       "Tested services with Jest and Postman while collaborating in an Agile team.",
@@ -43,7 +49,7 @@ export const experiences: readonly Experience[] = [
     company: "Edufied",
     category: "Internship",
     range: { start: "2025-10-01", end: "2026-01-31" },
-    displayDate: "October 2025 – January 2026",
+    displayDate: "Oct 2025–Jan 2026",
     highlights: [
       "Built Python and Playwright automation for web scraping, data cleaning, and MongoDB-backed workflows.",
       "Increased job data extraction volume by 40%.",
@@ -56,7 +62,7 @@ export const experiences: readonly Experience[] = [
     company: "Lamina Studios, LLC",
     category: "Internship",
     range: { start: "2025-07-01", end: "2025-08-31" },
-    displayDate: "July – August 2025",
+    displayDate: "Jul–Aug 2025",
     location: "Remote – Washington, United States",
     logo: "/images/experience-logos/lamina-logo.png",
     highlights: [
@@ -79,7 +85,7 @@ export const experiences: readonly Experience[] = [
     company: "NIDEC Control Techniques",
     category: "Internship",
     range: { start: "2023-11-01", end: "2024-03-31" },
-    displayDate: "November 2023 – March 2024",
+    displayDate: "Nov 2023–Mar 2024",
     location: "Remote – Nonthaburi, Thailand",
     logo: "/images/experience-logos/nidec-logo.png",
     highlights: [
@@ -94,14 +100,29 @@ export const experiences: readonly Experience[] = [
     company: "Google Developer Student Clubs – PUP Main",
     category: "Volunteering",
     range: { start: "2023-09-01", end: "2024-06-30" },
-    displayDate: "September 2023 – June 2024",
+    displayDate: "Sep 2023–Jun 2024",
     location: "Manila, Philippines",
     logo: "/images/experience-logos/gdsc-logo.png",
     highlights: [
-      "Co-led the data track for 50+ members, designing assessments and the learning roadmap.",
+      "Co-led the data track for 50+ members, helping design the learning roadmap, assessments, and onboarding activities.",
       "Led a data-engineering roadmap session and mentored members.",
     ],
     skills: ["Data Engineering", "Mentoring", "Learning Design"],
+  },
+  {
+    id: "facts-on-the-ground",
+    title: "Lead Machine Learning Engineer",
+    company: "Facts on the Ground",
+    category: "Volunteering",
+    range: { start: "2023-02-01", end: "2023-08-31" },
+    displayDate: "Feb–Aug 2023",
+    location: "Remote – Philippines",
+    logo: "/images/experience-logos/gdsc-logo.png",
+    highlights: [
+      "Led a 7-member ML sub-team and coordinated preprocessing and validation work that reduced irrelevant data by 20.2%.",
+      "Supported text preprocessing with data cleaning, tokenization, and normalization.",
+    ],
+    skills: ["Python", "Data Cleaning", "pandas", "NLTK", "Git"],
   },
   {
     id: "omdena-berlin",
@@ -109,40 +130,27 @@ export const experiences: readonly Experience[] = [
     company: "Omdena – Berlin Chapter",
     category: "Volunteering",
     range: { start: "2023-08-01", end: "2023-10-31" },
-    displayDate: "August – October 2023",
+    displayDate: "Aug–Oct 2023",
     location: "Remote – Berlin, Germany",
     logo: "/images/experience-logos/omdena-logo.png",
     highlights: [
-      "Collaborated on an end-to-end waste-management optimization project.",
+      "Collaborated on a waste-management optimization project, contributing EDA, a Streamlit application, and task deployment/presentation.",
       "Conducted exploratory analysis and helped build a Streamlit application.",
     ],
     skills: ["Python", "EDA", "pandas", "Streamlit", "Git"],
   },
   {
-    id: "facts-on-the-ground",
-    title: "Lead Machine Learning Engineer",
-    company: "Facts on the Ground – GDSC PUP Main",
-    category: "Volunteering",
-    range: { start: "2023-02-01", end: "2023-08-31" },
-    displayDate: "February – August 2023",
-    location: "Remote – Philippines",
-    logo: "/images/experience-logos/gdsc-logo.png",
-    highlights: [
-      "Led a seven-person data-wrangling and validation team for a collaborative machine-learning project.",
-      "Supported text preprocessing with data cleaning, tokenization, and normalization.",
-    ],
-    skills: ["Python", "Data Cleaning", "pandas", "NLTK", "Git"],
-  },
-  {
     id: "gdsc-data-ai-cadet",
-    title: "Junior Data and AI Cadet",
+    title: "Junior Data & AI Cadet",
     company: "Google Developer Student Clubs – PUP Main",
     category: "Volunteering",
     range: { start: "2022-10-01", end: "2023-08-31" },
-    displayDate: "October 2022 – August 2023",
+    displayDate: "Oct 2022–Aug 2023",
     location: "Manila, Philippines",
     logo: "/images/experience-logos/gdsc-logo.png",
-    highlights: [],
+    highlights: [
+      "Participated in structured Data & AI training, technical activities, and community learning initiatives.",
+    ],
     skills: ["Data", "Artificial Intelligence"],
   },
 ] as const;

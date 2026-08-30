@@ -22,11 +22,17 @@ export interface Profile {
   shortName: string;
   headline: string;
   introduction: string;
-  about: readonly string[];
+  about: {
+    heading: string;
+    introduction: string;
+    supporting: string;
+    currentFocus: string;
+  };
   email: string;
   phone: string;
   location: string;
   resumePath: string;
+  certificationsUrl: string;
   siteUrl: string;
   socialLinks: readonly SocialLink[];
 }
@@ -54,6 +60,7 @@ export interface Education {
   logo: string;
   distinction?: string;
   highlights: readonly string[];
+  coursework?: readonly string[];
 }
 
 export interface Certification {
@@ -64,6 +71,7 @@ export interface Certification {
   file?: string;
   credentialUrl?: string;
   credentialId?: string;
+  detail?: string;
 }
 
 export interface ProjectLinks {

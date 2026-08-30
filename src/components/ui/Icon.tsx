@@ -2,7 +2,10 @@ import type { SVGProps } from "react";
 
 export type IconName =
   | "arrow"
+  | "chart"
   | "close"
+  | "code"
+  | "database"
   | "document"
   | "email"
   | "external"
@@ -12,7 +15,9 @@ export type IconName =
   | "moon"
   | "send"
   | "sun"
-  | "video";
+  | "users"
+  | "video"
+  | "workflow";
 
 export function Icon({
   name,
@@ -20,7 +25,16 @@ export function Icon({
 }: { name: IconName } & SVGProps<SVGSVGElement>) {
   const paths: Record<IconName, React.ReactNode> = {
     arrow: <path d="m9 18 6-6-6-6" />,
+    chart: <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />,
     close: <path d="M6 6l12 12M18 6 6 18" />,
+    code: <path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14" />,
+    database: (
+      <>
+        <ellipse cx="12" cy="5" rx="8" ry="3" />
+        <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
+        <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
+      </>
+    ),
     document: (
       <>
         <path d="M6 3h8l4 4v14H6z" />
@@ -61,10 +75,23 @@ export function Icon({
         <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" />
       </>
     ),
+    users: (
+      <>
+        <circle cx="9" cy="7" r="4" />
+        <path d="M2 21v-2a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v2M16 3.5a4 4 0 0 1 0 7M18 14a5 5 0 0 1 4 5v2" />
+      </>
+    ),
     video: (
       <>
         <rect x="3" y="6" width="13" height="12" rx="2" />
         <path d="m16 10 5-3v10l-5-3" />
+      </>
+    ),
+    workflow: (
+      <>
+        <rect x="3" y="3" width="6" height="6" rx="1.5" />
+        <rect x="15" y="15" width="6" height="6" rx="1.5" />
+        <path d="M9 6h3a6 6 0 0 1 6 6v3M15 18h-3a6 6 0 0 1-6-6V9" />
       </>
     ),
   };

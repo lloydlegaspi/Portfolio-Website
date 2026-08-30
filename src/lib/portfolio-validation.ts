@@ -29,6 +29,7 @@ export const portfolioDataSchema = z.object({
   profile: z.object({
     name: z.string().min(1),
     email: z.string().email(),
+    certificationsUrl: url,
     siteUrl: url,
   }),
   projects: z.array(projectSchema).min(1),
@@ -49,6 +50,7 @@ export const portfolioDataSchema = z.object({
       id: z.string().min(1),
       degree: z.string().min(1),
       institution: z.string().min(1),
+      coursework: z.array(z.string().min(1)).optional(),
     }),
   ),
   certifications: z.array(
@@ -56,6 +58,8 @@ export const portfolioDataSchema = z.object({
       id: z.string().min(1),
       title: z.string().min(1),
       issued: isoDate.optional(),
+      credentialUrl: url.optional(),
+      detail: z.string().min(1).optional(),
     }),
   ),
 });

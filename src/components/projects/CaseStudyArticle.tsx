@@ -14,8 +14,8 @@ export function CaseStudyArticle({
   project,
 }: CaseStudyArticleProps) {
   return (
-    <article className="site-container py-20 sm:py-14">
-      <header className="mx-auto max-w-[820px]">
+    <article className="mx-auto w-full max-w-[1320px] px-8 py-20 sm:px-5 sm:py-14">
+      <header>
         <Link
           href="/projects"
           className="focus-ring inline-flex rounded-sm text-xs font-semibold uppercase tracking-[0.16em] text-neutral-500 underline decoration-neutral-300 underline-offset-4 hover:text-black dark:text-neutral-400 dark:hover:text-white"
@@ -49,7 +49,7 @@ export function CaseStudyArticle({
 
       <nav
         aria-label="Case study sections"
-        className="mx-auto mt-12 max-w-[820px] border-y border-neutral-200 py-5 dark:border-neutral-800"
+        className="mt-12 border-y border-neutral-200 py-5 dark:border-neutral-800"
       >
         <ol className="grid grid-cols-2 gap-x-8 gap-y-2 text-xs sm:grid-cols-1">
           {caseStudy.sections.map((section, index) => (
@@ -78,7 +78,7 @@ export function CaseStudyArticle({
             key={section.id}
             className="scroll-mt-24 border-t border-neutral-200 pt-10 dark:border-neutral-800"
           >
-            <div className="mx-auto mb-8 max-w-[820px]">
+            <div className="mb-8">
               <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
                 {String(index + 1).padStart(2, "0")}
               </p>
@@ -105,7 +105,7 @@ function CaseStudyBlockView({ block }: { block: CaseStudyBlock }) {
   switch (block.type) {
     case "paragraphs":
       return (
-        <div className="mx-auto max-w-[820px] space-y-5 text-sm leading-7 text-neutral-700 dark:text-neutral-300">
+        <div className="space-y-5 text-sm leading-7 text-neutral-700 dark:text-neutral-300">
           {block.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -113,7 +113,7 @@ function CaseStudyBlockView({ block }: { block: CaseStudyBlock }) {
       );
     case "bullets":
       return (
-        <ul className="mx-auto max-w-[820px] space-y-3 pl-5 text-sm leading-7 text-neutral-700 marker:text-neutral-400 dark:text-neutral-300">
+        <ul className="space-y-3 pl-5 text-sm leading-7 text-neutral-700 marker:text-neutral-400 dark:text-neutral-300">
           {block.items.map((item) => (
             <li key={item} className="list-disc pl-1">
               {item}
@@ -127,13 +127,17 @@ function CaseStudyBlockView({ block }: { block: CaseStudyBlock }) {
       return (
         <div className="grid grid-cols-2 gap-5 md:grid-cols-1">
           {block.figures.map((figure) => (
-            <CaseStudyFigure key={figure.src} figure={figure} />
+            <CaseStudyFigure
+              key={figure.src}
+              figure={figure}
+              sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1320px) calc((100vw - 84px) / 2), 618px"
+            />
           ))}
         </div>
       );
     case "metrics":
       return (
-        <div className="mx-auto max-w-[820px]">
+        <div>
           <dl className="grid grid-cols-3 gap-3 sm:grid-cols-1">
             {block.metrics.map((metric) => (
               <div
@@ -163,7 +167,7 @@ function CaseStudyBlockView({ block }: { block: CaseStudyBlock }) {
       );
     case "subsection":
       return (
-        <div className="mx-auto max-w-[820px]">
+        <div>
           <h3 className="text-lg font-semibold tracking-[-0.02em]">
             {block.title}
           </h3>
@@ -187,7 +191,7 @@ function CaseStudyBlockView({ block }: { block: CaseStudyBlock }) {
       );
     case "callout":
       return (
-        <aside className="mx-auto max-w-[820px] rounded-lg border border-neutral-300 bg-neutral-50 p-6 dark:border-neutral-700 dark:bg-neutral-900">
+        <aside className="rounded-lg border border-neutral-300 bg-neutral-50 px-8 py-7 dark:border-neutral-700 dark:bg-neutral-900 sm:p-6">
           <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-500 dark:text-neutral-400">
             {block.title}
           </p>

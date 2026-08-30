@@ -22,5 +22,8 @@ describe("canonical portfolio data", () => {
     expect(new Set(projects.map((project) => project.id)).size).toBe(
       projects.length,
     );
+    expect(new Set(experiences.map((experience) => experience.id)).size).toBe(
+      experiences.length,
+    );
   });
 });

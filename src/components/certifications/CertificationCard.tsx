@@ -17,6 +17,11 @@ export function CertificationCard({
           <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
             {certification.issuer}
           </p>
+          {certification.detail ? (
+            <p className="mt-1 text-[11px] leading-5 text-neutral-500 dark:text-neutral-400">
+              {certification.detail}
+            </p>
+          ) : null}
         </div>
         {certification.issued ? (
           <time

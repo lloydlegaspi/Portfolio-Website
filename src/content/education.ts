@@ -10,9 +10,13 @@ export const education = [
     location: "Sta. Mesa, Manila",
     logo: "/images/education-logos/pup-logo.png",
     distinction: "Cumulative GWA: 1.12 (1.00 = highest)",
-    highlights: [
-      "DOST Scholar",
-      "Relevant coursework: Database Management, Artificial Intelligence, Machine Learning, Software Engineering, and Data Structures",
+    highlights: ["DOST Scholar"],
+    coursework: [
+      "Database Management",
+      "Data Structures",
+      "Software Engineering",
+      "Artificial Intelligence",
+      "Machine Learning",
     ],
   },
   {

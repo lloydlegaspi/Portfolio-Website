@@ -6,32 +6,35 @@ const movieImages = {
     width: 1746,
     height: 962,
     alt: "Production Partner Screening report home page with navigation for starting the screening workflow or reading the report guide.",
-    caption:
-      "Report home page introducing the screen, prioritize, and investigate workflow.",
+    title: "Home",
+    caption: "Introduces the screen, prioritize, and investigate workflow.",
   },
   about: {
     src: "/images/projects/Movie/02_about_page.png",
     width: 1795,
     height: 985,
     alt: "About the Report page listing the business questions, analytical scope, key business rules, and interpretation limitations.",
+    title: "About the Report",
     caption:
-      "About the Report page documenting scope, screening rules, usage guidance, and evidence limitations.",
+      "Documents analytical scope, screening rules, usage guidance, and evidence limitations.",
   },
   overview: {
     src: "/images/projects/Movie/03_overview.png",
     width: 1794,
     height: 1004,
     alt: "Production Partner Screening overview with candidate counts, evidence coverage metrics, a production scatter plot, and a company comparison table.",
+    title: "Production Partner Screening",
     caption:
-      "Production Partner Screening overview showing screening KPIs, evidence coverage, and company comparison.",
+      "Screens and compares candidate production companies using production, recency, rating, finance, and collaboration evidence.",
   },
   company: {
     src: "/images/projects/Movie/04_company.png",
     width: 1795,
     height: 1000,
     alt: "Company Screening Evidence page for Blumhouse Productions with release-year history, movie-level rating and financial evidence, individual movies, and recurring collaborators.",
+    title: "Company Screening Evidence",
     caption:
-      "Company Screening Evidence page combining production history, movie-level evidence, coverage, and observed recurring collaborators.",
+      "Provides production history, movie-level evidence, evidence coverage, and recurring collaborator context for the selected company.",
   },
   pipeline: {
     src: "/images/projects/Movie/partner_screening-movie_pipeline_final.drawio.png",
@@ -68,37 +71,41 @@ const olistImages = {
     caption:
       "Olist analytical model showing five shared dimensions and three native-grain facts for orders, sales, and payments.",
   },
-  context: {
+  reportingContext: {
     src: "/images/projects/Olist/page0-context.png",
     width: 1137,
     height: 846,
     alt: "Regional Marketplace Balance Monitor context page explaining the business purpose, stakeholder, screening decision, scope, and report usage.",
+    title: "Reporting Context",
     caption:
-      "Reporting context page framing regional seller-recruitment investigation as a screening and prioritization exercise.",
+      "Frames regional seller-recruitment investigation as a screening and prioritization exercise.",
   },
-  overview: {
+  home: {
     src: "/images/projects/Olist/page1-overview.png",
     width: 1537,
     height: 866,
     alt: "Regional Opportunity Overview dashboard with demand and seller activity KPIs, a state comparison scatter plot, a Brazil map, and a table of states flagged for investigation.",
+    title: "Home",
     caption:
-      "Regional Opportunity Overview comparing customer demand, same-state seller coverage, interstate dependence, and local participation.",
+      "Introduces the Regional Marketplace Balance Monitor and provides navigation into the report workflow.",
   },
-  detail: {
+  stateOpportunityDeepDive: {
     src: "/images/projects/Olist/page2-state-drillthrough.png",
     width: 1534,
     height: 865,
     alt: "State Opportunity Deep Dive for Pará with demand, local seller, interstate dependence, category, seller-origin, and monthly fulfillment evidence.",
+    title: "State Opportunity Deep Dive",
     caption:
-      "Pará deep dive showing category demand, local seller participation, out-of-state seller origins, and monthly fulfillment evidence.",
+      "Examines customer demand, local seller participation, out-of-state seller origins, and fulfillment evidence for the selected state.",
   },
-  summary: {
+  decisionSummary: {
     src: "/images/projects/Olist/page3-summary.png",
     width: 1533,
     height: 862,
     alt: "Decision Summary for Pará with investigation evidence, a leading category, a cautious recommendation, and validation next steps.",
+    title: "Decision Summary",
     caption:
-      "Decision summary translating the selected-state evidence into a bounded investigation recommendation and validation steps.",
+      "Summarizes the evidence, recommended investigation focus, and next validation steps for the selected state.",
   },
 } as const;
 
@@ -217,7 +224,12 @@ const movieCaseStudy: ProjectCaseStudy = {
         },
         {
           type: "gallery",
-          figures: [movieImages.home, movieImages.about, movieImages.company],
+          figures: [
+            movieImages.home,
+            movieImages.about,
+            movieImages.overview,
+            movieImages.company,
+          ],
         },
         {
           type: "subsection",
@@ -346,7 +358,7 @@ const olistCaseStudy: ProjectCaseStudy = {
     description:
       "A technical case study of a validated Airflow, PostgreSQL, and dbt pipeline for regional marketplace analytics.",
   },
-  hero: olistImages.overview,
+  hero: olistImages.home,
   sections: [
     {
       id: "context",
@@ -508,9 +520,10 @@ const olistCaseStudy: ProjectCaseStudy = {
         {
           type: "gallery",
           figures: [
-            olistImages.context,
-            olistImages.detail,
-            olistImages.summary,
+            olistImages.home,
+            olistImages.reportingContext,
+            olistImages.stateOpportunityDeepDive,
+            olistImages.decisionSummary,
           ],
         },
         {

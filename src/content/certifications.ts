@@ -3,18 +3,25 @@ import type { Certification } from "@/types/portfolio";
 export const certifications: readonly Certification[] = [
   {
     id: "microsoft-azure-fundamentals",
-    title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+    title: "Microsoft Certified: Azure Fundamentals",
     issuer: "Microsoft",
+    detail: "AZ-900",
+    credentialUrl:
+      "https://learn.microsoft.com/api/credentials/share/en-us/JohnLloydLegaspi-0410/787E21E959DA3AF3?sharingId=AA931207731F096F",
   },
   {
     id: "microsoft-azure-ai-fundamentals",
-    title: "Microsoft Certified: Azure AI Fundamentals (AI-900)",
+    title: "Microsoft Certified: Azure AI Fundamentals",
     issuer: "Microsoft",
+    detail: "AI-900",
+    credentialUrl:
+      "https://learn.microsoft.com/api/credentials/share/en-us/JohnLloydLegaspi-0410/125C0A1BAC22778A?sharingId=AA931207731F096F",
   },
   {
     id: "google-advanced-analytics",
     title: "Google Advanced Data Analytics",
-    issuer: "Google Career Certificates (Coursera)",
+    issuer: "Google",
+    detail: "Google Career Certificates / Coursera",
     issued: "2024-08-01",
     file: "/images/certs/google-advanced-data-analytics.pdf",
     credentialUrl:
@@ -24,7 +31,8 @@ export const certifications: readonly Certification[] = [
   {
     id: "google-it-automation",
     title: "Google IT Automation with Python",
-    issuer: "Google Career Certificates (Coursera)",
+    issuer: "Google",
+    detail: "Google Career Certificates / Coursera",
     issued: "2023-04-01",
     file: "/images/certs/google-it-automation-with-python.pdf",
     credentialUrl:
@@ -34,7 +42,8 @@ export const certifications: readonly Certification[] = [
   {
     id: "google-data-analytics",
     title: "Google Data Analytics Professional",
-    issuer: "Google Career Certificates (Coursera)",
+    issuer: "Google",
+    detail: "Google Career Certificates / Coursera",
     issued: "2022-11-01",
     file: "/images/certs/google-data-analytics.pdf",
     credentialUrl:
@@ -45,6 +54,8 @@ export const certifications: readonly Certification[] = [
     id: "datacamp-data-engineer",
     title: "Data Engineer Associate",
     issuer: "DataCamp",
+    credentialUrl: "https://www.datacamp.com/certificate/DEA0018906493000",
+    credentialId: "DEA0018906493000",
   },
   {
     id: "datacamp-data-scientist",
