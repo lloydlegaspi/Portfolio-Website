@@ -4,8 +4,6 @@ A production-oriented personal portfolio for John Lloyd S. Legaspi. It presents 
 
 [View the deployed portfolio](https://lloyd-legaspi-portfolio.vercel.app/)
 
-![Portfolio website](public/images/projects/portfolio.png)
-
 ## Architecture
 
 The site uses Next.js 16.3, React 19, strict TypeScript, the App Router, and Tailwind CSS. Server Components render static portfolio content by default; focused Client Components own theme state, project filters, accessible dialogs, the email form, and the chat interface.
